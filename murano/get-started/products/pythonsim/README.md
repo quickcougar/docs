@@ -80,7 +80,7 @@ In this section, you will use the Python device simulator to activate the new de
   ```
 If successful, the script will ask you to enter your Product ID.
 
-  ![image alt text](pythonsim_6.png)
+  ![image alt text](pythonsim_6(2).png)
 
 3. Paste your Product ID into the terminal and press **Enter**. 
 
