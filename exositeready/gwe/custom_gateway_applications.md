@@ -10,6 +10,83 @@ This illustration shows an application written in the context of and hosted by G
 
 The Custom Gateway Application is the customized logic the developer writes for a specific IoT solution. A Custom Gateway Application should be designed to be installed via the Gateway Engine installer and OTAU feature.
 
+## The Three Types of Custom Gateway Applications
+
+In order to host applications, Gateway Engine combines [supervisor's](http://supervisord.org) process management functionality with its own set of installation, version tracking and telemetrics. Not every Custom Gateway Application needs to leverage all of these features. Sometimes you just need to have a single command executed on a gateway, or maybe there is an API library that requires an update. For applications like these, there is no use for process control, logfile rotation, or even supervisor configuration files. In cases like these, `supervisor.conf` can be omitted entirely from OTAU packages.
+
+Broadly speaking, there are 3 types of Custom Gateway Applications:
+
+* Long-Running
+* One-Off
+* Libraries
+
+### Long-Running Applications
+
+Gateway applications usually have some sort of ``While-True`` loop that essentially attempts to make the program run forever. In order to start and continuously manage a long-running application, a ``supervisor.conf`` file should be provided (or rely on the defaults) to configure ``supervisord``. Though there are many configuration options available, Gateway Engine essentially only needs to know one thing to start/execute and continue running a given Custom Gateway Application: **the command to start/execute the applicaiton**.
+
+Beyond this requirement, all other configuration settings are optional. The way you provide the path to your application is with the `supervisor.conf` file.
+
+    ```
+    $ cat supervisor.conf 
+    [supervisord]
+    command = python -u /usr/local/bin/report_coffee.py
+    ```
+
+### One-Off
+
+This type of application is a command, or series of commands, that is run only once. A one-shot app is simply a command or series of commands in an ``install.sh`` script packaged in an application tarball. Below is an example of a one-shot app:
+
+    ```
+    $ tar tvf send_some_logs.v1.tar.gz 
+    install.sh
+    $ tar -Oxf send_some_logs.v1.tar.gz install.sh
+    #!/bin/sh
+
+    # Usage:
+    # Paste the following into the 'engine_fetch' dataport
+    #   {"install":[{"name":"send_some_logs.v1.tar.gz"}]}
+    # Or use exoline:
+    #   exo write <CIK> engine_fetch --value='{"install":[{"name":"send_some_logs.v1.tar.gz"}]}'
+
+    CRASH_REPORT=`tail -n 50 /var/log/coffee_reporter.log`
+
+    python << EOF
+    from exo.device import Device
+    from GatewayEngine import utils as gweu
+
+    D = Device('GWE-crash-report', gweu.gwe_conf())
+    D.http_write('fetch_status', """$CRASH_REPORT""")
+    EOF
+    $
+    ```
+
+Notice that one-shot apps do not have a `supervisor.conf` file that configures commands and logfiles for supervisor, it is just an `install.sh` script that runs some shell commands. 
+
+The example shown above uses the `Device` python class from the `device-client` library and the `GatewayEngine` configuration file to dump the last 50 lines of a log file into the `fetch_status` dataport.
+
+### Libraries
+
+Similar to a one-shot application, this type of application can hardly be said to be an application at all. A typical library install package looks the same as a normal Gateway Engine application tarball with the exception of not having a `supervisor.conf` file since it doesn't need to ever run. Sometimes it is important to be able to fix libraries such as protocol libraries, API libraries, etc. Below is what an update to a Modbus library might look like.
+
+    ```
+    $ tar zxvf modbus_lib.v37.tar.gz
+    x install.sh
+    x modbus_lib/
+    $ cat install.sh
+    #!/bin/sh
+
+    cd modbus_lib/
+    python setup.py install
+    ```
+
+Since the Gateway Engine installer supports running `setup.py` installers as well as `install.sh` scripts, python libraries can be installed without an `install.sh` script. Here is an example below:
+
+```
+$ tar zxvf modbus_lib.v38.tar.gz
+x setup.py
+x modbus_lib/
+```
+
 ## Get the Gateway Engine Development Tools
 
 Navigate to the [Release Packages!](release_packages.md) section and download the latest copy of Gateway Engine to your development machine.
@@ -252,7 +329,7 @@ mr product device write <SERIAL_NUMBER_OF_GATEWAY> engine_fetch '{"install": [{"
 
 ## Verify the Deployment
 
-The STDOUT of the `install.sh` script is written to Gateway Engine's `fetch_status` dataport after it completes. Use the following MrMurano command to check on the status of the installation. If there were any errors during the deployment, the will show up here:
+The STDOUT of the `install.sh` script is written to Gateway Engine's `fetch_status` dataport after it completes. Use the following MrMurano command to check on the status of the installation. If there were any errors during the deployment, they will show up here:
 
 ```
 mr product device read <SERIAL_NUMBER_OF_GATEWAY> fetch_status
