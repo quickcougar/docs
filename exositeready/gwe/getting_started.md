@@ -28,25 +28,28 @@ take action on in order to activate your account and login.
 
 # Step Two - Making and Configuring a Product
 
+## Make a New Product
 Once your account is set up, add a Product and name it (e.g. "Gateway Engine", "My Product", etc). 
 
-Now that you have a product, you must configure it with resources either using MrMurano (recommended) or Manually.
+## Configure the New Product
 
-## Use MrMurano
+Now that you have a product, you must configure it with resources either using **MrMurano** (recommended) or **Manually**.
+
+### Use MrMurano
 
 The [MrMurano tool](https://github.com/tadpol/MrMurano) is a command-line tool you can configure and use with your Murano Solutions and Products. 
 
-### Quick Configuration
+#### Quick Configuration
 
 Below are the minimum steps needed to configure MrMurano for using Gateway Engine.
 
-#### Configure User Name
+##### Configure User Name
 
 ```
 mr config user.name USER_NAME
 ```
 
-#### Select and Configure your Business Account
+##### Select and Configure your Business Account
 
 ```
 mr account --business
@@ -57,7 +60,7 @@ mr config business.id XXXXXXXXXXX
 
 If you don't want this stored in a local file, run `rm ~/.mrmurano/passwords` after each session.
 
-#### Configure Product ID
+##### Configure Product ID
 
 ```
 mr config product.id XXXXXXXXXXX
@@ -67,7 +70,7 @@ Once you configure MrMurano, you can use the following
 commands to create the required Gateway Engine resources to the Murano
 device. 
 
-#### Tell MrMurano Where to Find the Spec File
+##### Tell MrMurano Where to Find the Spec File
 
 The default location MrMurano uses is `$PWD/specs`. This can be overridden with the following command:
 
@@ -77,21 +80,21 @@ mr config location.specs relative/path/to/folder/containing/spec.file
 
 Verify the path with `mr config --dump`.
 
-#### Tell MrMurano Which Spec File to Use
+##### Tell MrMurano Which Spec File to Use
 
 ```
 mr config product.spec gwe.spec
 ```
 
-### Create the Resources
+#### Create the Resources
 
 ```
 mr syncup -V --specs
 ```
 
-## Manually
+### Manually
 
-The table, below, shows the resources you must add, what to name them
+The table, below, shows the resources you must add to the Product Definition, what to name them
 and what format to choose for them.
 
 | Alias         | Format        | Description   |
@@ -102,6 +105,31 @@ and what format to choose for them.
 | engine_fetch | string | Gateway Engine regularly checks this dataport for formatted messages containing instructions on new apps and updates to install.        |
 | fetch_status | string | Once an app is installed over-the-air or an update to an app is executed, Gateway Engine reports the STDOUT and STDERR from the app installer. This dataport is also used for uncaught exception logging.       |
 | update_interval | string | This value, in seconds, is the delay between each series of Gateway Engine reports and OTAU checkins.|
+
+## Verify Resources Exist in Product Definition
+
+To verify the resources are created on your new product, you can visually inspect the Product Definition on your Business > Product page and click the Definition tab.
+
+Another way to do verify is to use MrMurano:
+
+```
+mr product spec pull
+```
+
+You should see output similar to this:
+
+  ```
+  +-----------------+--------+------------------------------------------+
+  | Alias           | Format | RID                                      |
+  +-----------------+--------+------------------------------------------+
+  | engine_fetch    | string | 584375baa68eb9e3d3c342caa5cf783a24965029 |
+  | engine_report   | string | d1cdfece4e080c723e7b2d57e0c508f6e4c96c20 |
+  | device_info     | string | 875c312cf0532a17556a05118374d215cbbfb4ee |
+  | update_interval | string | ab3885bc85c68fc0290ee1adbf7264671651e816 |
+  | usage_report    | string | b8405345023bb5dc72488ed072e96a5dc5f3424a |
+  | fetch_status    | string | 4c237e449a6fdff9e2ca72b3832c89902413eb6b |
+  +-----------------+--------+------------------------------------------+
+  ```
 
 # Step Three - Adding a Device
 
