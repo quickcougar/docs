@@ -26,17 +26,14 @@ Gateway applications usually have some sort of ``While-True`` loop that essentia
 
 Beyond this requirement, all other configuration settings are optional. The way you provide the path to your application is with the `supervisor.conf` file.
 
-    ```
     $ cat supervisor.conf 
     [supervisord]
     command = python -u /usr/local/bin/report_coffee.py
-    ```
 
 ### One-Off
 
 This type of application is a command, or series of commands, that is run only once. A one-shot app is simply a command or series of commands in an ``install.sh`` script packaged in an application tarball. Below is an example of a one-shot app:
 
-    ```
     $ tar tvf send_some_logs.v1.tar.gz 
     install.sh
     $ tar -Oxf send_some_logs.v1.tar.gz install.sh
@@ -58,7 +55,6 @@ This type of application is a command, or series of commands, that is run only o
     D.http_write('fetch_status', """$CRASH_REPORT""")
     EOF
     $
-    ```
 
 Notice that one-shot apps do not have a `supervisor.conf` file that configures commands and logfiles for supervisor, it is just an `install.sh` script that runs some shell commands. 
 
@@ -68,7 +64,6 @@ The example shown above uses the `Device` python class from the `device-client` 
 
 Similar to a one-shot application, this type of application can hardly be said to be an application at all. A typical library install package looks the same as a normal Gateway Engine application tarball with the exception of not having a `supervisor.conf` file since it doesn't need to ever run. Sometimes it is important to be able to fix libraries such as protocol libraries, API libraries, etc. Below is what an update to a Modbus library might look like.
 
-    ```
     $ tar zxvf modbus_lib.v37.tar.gz
     x install.sh
     x modbus_lib/
@@ -77,15 +72,13 @@ Similar to a one-shot application, this type of application can hardly be said t
 
     cd modbus_lib/
     python setup.py install
-    ```
 
 Since the Gateway Engine installer supports running `setup.py` installers as well as `install.sh` scripts, python libraries can be installed without an `install.sh` script. Here is an example below:
 
-```
-$ tar zxvf modbus_lib.v38.tar.gz
-x setup.py
-x modbus_lib/
-```
+
+    $ tar zxvf modbus_lib.v38.tar.gz
+    x setup.py
+    x modbus_lib/
 
 ## Get the Gateway Engine Development Tools
 
@@ -125,77 +118,73 @@ Executing the following command will prompt you for a name for the new buildfile
 
 ### Create Buildfile
 
-```
-$ gwe --create-buildfile
-Provide build file name (my_app.json): gwe-buildfile.json
-Provide app name (my_app): my_gwe_hosted_app
-Provide app version (1): 1
-==================================================
-==============  Build file created  ==============
-==================================================
+    $ gwe --create-buildfile
+    Provide build file name (my_app.json): gwe-buildfile.json
+    Provide app name (my_app): my_gwe_hosted_app
+    Provide app version (1): 1
+    ==================================================
+    ==============  Build file created  ==============
+    ==================================================
 
-A bare-bones JSON build file has been created. It
-supports the following parameters:
+    A bare-bones JSON build file has been created. It
+    supports the following parameters:
 
- "name"             -   This is the name Gateway
-                        Engine will use as your
-                        application's name.
+     "name"             -   This is the name Gateway
+                            Engine will use as your
+                            application's name.
 
- "version"          -   This is the version of
-                        your application. Any
-                        time you edit the code
-                        or anything in your
-                        application, you should
-                        increment or otherwise
-                        change the version.
+     "version"          -   This is the version of
+                            your application. Any
+                            time you edit the code
+                            or anything in your
+                            application, you should
+                            increment or otherwise
+                            change the version.
 
- "includes"         -   This is a list of files
-                        that you want to include
-                        in your application 
-                        tarball. Add files to 
-                        this list to suit the
-                        needs of your applicaiton.
+     "includes"         -   This is a list of files
+                            that you want to include
+                            in your application 
+                            tarball. Add files to 
+                            this list to suit the
+                            needs of your applicaiton.
 
- "excludes"         -   This is a list of files
-                        that you don't want in
-                        your application tarball.
-                        This option is often used
-                        when specifying "include"
-                        lists with globs like "*".
+     "excludes"         -   This is a list of files
+                            that you don't want in
+                            your application tarball.
+                            This option is often used
+                            when specifying "include"
+                            lists with globs like "*".
 
- "pre_build_cmds"   -   This is a list of system
-                        commands you want to run
-                        before the tarball is 
-                        created. Common uses for
-                        this feature are to do
-                        "wget" to fetch resources
-                        on the internet that you
-                        want included in your
-                        application tarball.
+     "pre_build_cmds"   -   This is a list of system
+                            commands you want to run
+                            before the tarball is 
+                            created. Common uses for
+                            this feature are to do
+                            "wget" to fetch resources
+                            on the internet that you
+                            want included in your
+                            application tarball.
 
- "post_build_cmds"  -   This is a list of system
-                        commands you want run
-                        after the tarball is 
-                        created. This is handy 
-                        for cleaning up build
-                        artifacts after the 
-                        build completes.
+     "post_build_cmds"  -   This is a list of system
+                            commands you want run
+                            after the tarball is 
+                            created. This is handy 
+                            for cleaning up build
+                            artifacts after the 
+                            build completes.
 
-For more information on Gateway Engine
-please visit:
+    For more information on Gateway Engine
+    please visit:
 
-    gateway-engine.exosite.io
+        gateway-engine.exosite.io
 
-Build file location:
+    Build file location:
 
-    /Users/willcharlton/sandbox/GatewayEngine/gmq-sine-demo/gwe-buildfile.json
+        /Users/willcharlton/sandbox/GatewayEngine/gmq-sine-demo/gwe-buildfile.json
 
-==================================================
-===========  gatewayengine@exosite.com  ==========
-==================================================
-
-
-```
+    ==================================================
+    ===========  gatewayengine@exosite.com  ==========
+    ==================================================
 
 ### Create `install.sh` Script
 
@@ -230,30 +219,30 @@ cat supervisor.conf
 
 Below are the default options that Gateway Engine will impose if the `supervisor.conf` file you provide does not contain them. If your `supervisor.conf` file contains any of these options, then the defaults will be overridden by them.
 
-    ```
-    ; This section is mandatory. If a supervisor.conf file doesn't
-    ; have this section, it won't be recognized during installation.
-    [supervisord]
+```
+; This section is mandatory. If a supervisor.conf file doesn't
+; have this section, it won't be recognized during installation.
+[supervisord]
 
-    ; This tells supervisord to redirect your app STDERR to STDOUT.
-    redirect_stderr = true
+; This tells supervisord to redirect your app STDERR to STDOUT.
+redirect_stderr = true
 
-    ; This tells supervisord to keep the logfile size less than or equal to 200KB.
-    stdout_logfile_maxbytes = 200KB
+; This tells supervisord to keep the logfile size less than or equal to 200KB.
+stdout_logfile_maxbytes = 200KB
 
-    ; This tells supervisord to keep only 1 backup of the logfile.
-    stdout_logfile_backups = 1
+; This tells supervisord to keep only 1 backup of the logfile.
+stdout_logfile_backups = 1
 
-    ; This is the command supervisord will use to run/execute your application. 
-    ; The default command is "command". This will always fail and is just a placeholder 
-    ; for the actual command needed to start your app (e.g. "command": /usr/local/bin/my_app).
-    command = command
+; This is the command supervisord will use to run/execute your application. 
+; The default command is "command". This will always fail and is just a placeholder 
+; for the actual command needed to start your app (e.g. "command": /usr/local/bin/my_app).
+command = command
 
-    ; This is the logfile path prefix supervisord will redirect your STDOUT and STDERR to. 
-    ; Gateway Engine will use the name of the tarball to fill in the rest of the logfile name
-    ; if you don't specify your own. The default value, below, is just a prefix. 
-    stdout_logfile = /var/log
-    ```
+; This is the logfile path prefix supervisord will redirect your STDOUT and STDERR to. 
+; Gateway Engine will use the name of the tarball to fill in the rest of the logfile name
+; if you don't specify your own. The default value, below, is just a prefix. 
+stdout_logfile = /var/log
+```
 
 ### Create the Application
 
@@ -298,9 +287,7 @@ gwe --check-buildfile gwe-buildfile.json
 
 With the example buildfile, above, the following output should be seen on your terminal:
 
-    ```
     [PASS]
-    ```
 
 ## Build the Application
 
@@ -314,9 +301,7 @@ gwe --build-app gwe-buildfile.json
 
 The output of this command will look something like this:
 
-    ```
     /home/user/sandbox/my_gwe_hosted_app/my_gwe_hosted_app.v1.tar.gz
-    ```
 
 ## Deploy the Application
 
