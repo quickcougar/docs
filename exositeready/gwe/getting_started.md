@@ -137,7 +137,7 @@ Copy down the MAC address of your Gateway and use it as the serial number for yo
 
 Add a Device to your Murano Product with the MAC address of your gateway and name it something relevant (e.g. My Getting Started Gateway).
 
-# Step Four - Download, Install, Configure Gateway Engine
+# Step Four - Download-Install-Configure Gateway Engine
 
 To download the latest version of the Public Release of Gateway Engine,
 follow these steps:
