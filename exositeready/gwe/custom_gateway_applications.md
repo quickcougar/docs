@@ -294,7 +294,8 @@ With the example buildfile, above, the following output should be seen on your t
 With an application to build and a buildfile, Gateway Engine can build an OTAU application with the following command:
 
 ```
-gwe --build-app gwe-buildfile.json
+gwe --build-app gwe-bui
+ldfile.json
 ```
 
 **NOTE**: If you are experiencing errors or problems with installs, you can add more debug output to the build command with the `-d DEBUG` cli flag.

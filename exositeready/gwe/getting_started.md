@@ -194,12 +194,18 @@ follow these steps:
     ssh <USER>@<GATEWAY_IP> "gwe --set-product-id <PRODUCT_ID> --set-iface <THE_INTERFACE>""
     ```
 
-    **Example:**
+    **Example:** A simple example that uses `eth0`.
 
     ```
     ssh <USER>@<GATEWAY_IP> "gwe --set-product-id dubhxzv0r4e1m7vj --set-iface eth0"``
     ```
-    
+
+    **Example:** A simple example that uses `eth0` and a one second update interval.
+
+    ```
+    ssh <USER>@<GATEWAY_IP> "gwe --set-product-id dubhxzv0r4e1m7vj --set-iface eth0 --set-update-interval 1.0"
+    ```
+
  Or if you want to just specify your own serial number:
  
     ```
@@ -240,7 +246,13 @@ gwe                           RUNNING    pid 620, 00:01:38
 ```
 
 A few seconds after rebooting the gateway you should see data appear in
-the aliases of your GatewayEngine device.
+the aliases of your GatewayEngine device. You can either view this in the 
+Business > Product > Device view of the Murano website, or you can run the 
+following MrMurano command a few times until you start seeing new data.
+
+```
+mr product device read <SERIAL_NUMBER_OF_GATEWAY> engine_report 
+```
 
 For additional functionality of Exosite products available on your gateway, take a look at
 the output of the following commands:
