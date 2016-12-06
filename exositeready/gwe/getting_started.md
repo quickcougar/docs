@@ -27,6 +27,7 @@ Sign up for a [Murano account](https://exosite.com/murano/).
 take action on in order to activate your account and log in.
 
 ## Create and Configure a Product
+Once your account is set up, add a Product and name it (e.g. "gateway-engine", "my-product", etc). 
 
 Once your account is set up, add a new product and name it (e.g., "Gateway Engine," "My Product," etc). 
 
@@ -42,15 +43,18 @@ Below are the minimum steps needed to configure MrMurano for using GWE.
 
 ##### Configure User Name
 
+This is the user name or email address with which you use to login to Murano.
+
 ```
 mr config user.name USER_NAME
 ```
 
 ##### Select and Configure your Business Account
 
+If it's your first time logging into your Murano account with MrMurano on the command-line, you will be prompted for your password. Once you've successfully logged in, the following command will show you a listing of all of the business accounts you have access to. 
+
 ```
 mr account --business
-mr config business.id XXXXXXXXXXX
 ```
 
 **NOTE**: The `mr config` dialog stores configuration entries in `.mrmuranorc` files but treats passwords differently. The first time you log in to an account and are prompted for your password, MrMurano stashes the password in the file `~/.mrmurano/passwords`. 
@@ -72,21 +76,15 @@ device.
 The default location MrMurano uses is `$PWD/specs`. This can be overridden with the following command:
 
 ```
-mr config location.specs relative/path/to/folder/containing/spec.file
+mr config business.id XXXXXXXXXXX
 ```
 
-Verify the path with `mr config --dump`.
+##### Configure Product ID
 
-##### Tell MrMurano Which Spec File to Use
-
-```
-mr config product.spec gwe.spec
-```
-
-#### Create the Resources
+You can find the Product ID (often referred to in this context as the **PID**) in the Murano web UI under the "INFO" tab. Use this Product ID in the command, below:
 
 ```
-mr syncup -V --specs
+mr config product.id XXXXXXXXXXX
 ```
 
 ### Manually
