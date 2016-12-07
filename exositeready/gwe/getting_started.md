@@ -19,18 +19,18 @@ gateway has the minimum requirements for running GWE:
 
 # Getting Started 
 
-This getting started guide will take you through the various steps it takes to start using Murano and GWE such as creating and configuring a Murano account, downloading GWE, configuring tools and installing GWE onto a gateway.
+This getting-started guide will take you through the various steps to start using Murano and GWE, such as creating and configuring a Murano account, downloading GWE, configuring tools, and installing GWE onto a gateway.
 
-## Download and Unpack Gateway Engine
+## Download and Unpack GWE
 
-To download the latest version of the Public Release of GWE, navigate to the [GWE Release Packages](/exositeready/gwe/release_packages/) page and choose a method for downloading GWE. Once downloaded, copy/move it to a directory on the filesystem of your development machine so its resources can be referenced later on.
+To download the latest version of the public release of GWE, navigate to the [GWE Release Packages](/exositeready/gwe/release_packages/) page and choose a method for downloading GWE. Once downloaded, copy/move it to a directory on the filesystem of your development machine so its resources can be referenced later on.
 
 ```
 mkdir ~/code
 cp ~/Downloads/GatewayEngine.v*.tar.gz ~/code
 ```
 
-The GWE download contains useful resources and tools that we use outside the context of a gateway. To make these resources available on your development machine, decompress the tarball:
+The GWE download contains useful resources and tools you can use outside the context of a gateway. To make these resources available on your development machine, decompress the tarball:
 
 ```
 cd ~/code
@@ -47,7 +47,7 @@ You will be doing more with this download and the newly unpacked directory `~/co
 take action on in order to activate your account and log in.
 
 ## Create and Configure a Product
-Once your account is set up, add a Product and name it (e.g. "gateway-engine", "my-product", etc). 
+Once your account is set up, add a Product and name it (e.g., "gateway-engine", "my-product", etc). 
 
 Once you have a product, you must configure it with resources either using **MrMurano** (*recommended*) or manually by using the Murano web UI.
 
@@ -57,11 +57,13 @@ The [MrMurano tool](https://github.com/tadpol/MrMurano) is a command-line tool y
 
 #### Quick Configuration
 
-Below are the some of the steps needed to configure MrMurano for using GWE. There will be more configuration commands for MrMurano, but information for these commands is not yet available at this step of our Getting Started guide.
+Below are some of the steps needed to configure MrMurano for using GWE. 
+
+**Note:** There will be more configuration commands for MrMurano, but information for these commands is not yet available at this step of our getting-started guide.
 
 ##### Configure User Name
 
-This is the user name or email address with which you use to login to Murano.
+This is the username or email address with which you use to login to Murano.
 
 ```
 mr config user.name USER_NAME
@@ -69,7 +71,7 @@ mr config user.name USER_NAME
 
 ##### Select and Configure your Business Account
 
-If it's your first time logging into your Murano account with MrMurano on the command-line, you will be prompted for your password. Once you've successfully logged in, the following command will show you a listing of all of the business accounts you have access to. 
+If it is your first time logging into your Murano account with MrMurano on the command line, you will be prompted for your password. Once you have successfully logged in, the following command will show you a listing of all the business accounts you have access to. 
 
 ```
 mr account --business
@@ -77,7 +79,7 @@ mr account --business
 
 **NOTE**: The `mr config` dialog stores configuration entries in `.mrmuranorc` files but treats passwords differently. The first time you log in to an account and are prompted for your password, MrMurano stashes the password in the file `~/.mrmurano/passwords`. If you do not want this stored in a local file, run `rm ~/.mrmurano/passwords` after each session.
 
-Once you have logged in, choose the right **Biz ID** and use it in the command, below in place of "&lt;BUSINESS\_ID&gt;":
+Once you have logged in, choose the right **Biz ID** and use it in the command below in place of "&lt;BUSINESS\_ID&gt;":
 
 ```
 mr config business.id <BUSINESS_ID>
@@ -99,7 +101,7 @@ mr product list
 
 ##### Tell MrMurano Where to Find the Spec File
 
-A "spec" file is a YAML file that describes the resources of a Murano Product. The GWE spec file is available in the release tarball and, now that you've unpacked it on your development machine, can be found at `~/code/gateway-engine/specs`. The contents of the file are shown, below.
+A "spec" file is a YAML file that describes the resources of a Murano Product. The GWE spec file is available in the release tarball and, now that you have unpacked it on your development machine, can be found at `~/code/gateway-engine/specs`. The contents of the file are shown, below.
 
     $ cd ~/code/gateway-engine
     $ cat specs/gwe.spec
@@ -148,9 +150,9 @@ mr syncup -V --specs
 
 ### Configure a Product Manually
 
-If you haven't configured MrMurano, you can create the GWE resources manually using the Murano web UI. 
+If you have not configured MrMurano, you can create the GWE resources manually using the Murano web UI. 
 
-The table, below, shows the resources you must add to the Product Definition, what to name them and what format to choose for them.
+The table, below, shows the resources you must add to the Product Definition, what to name them, and which format to choose for them.
 
 | Alias         | Format        | Description   |
 | ------------- | ------------- | ------------- |
@@ -187,7 +189,7 @@ Run the following command to untar the release package and install GWE onto your
     ./install.sh"
   ```
 
-  **NOTE:** In some Linux environments, you will need to use Super-User permissions to run the installer. If the type of Linux you're using has both `root` and non-`root` users, then in order to use GWE, you'll likely need to install GWE as `root`. In this case, replace the `./install.sh` from the command, above with `sudo ./install.sh`. For example:
+  **NOTE:** In some Linux environments, you will need to use Super-User permissions to run the installer. If the type of Linux you are using has both `root` and non-`root` users, you will likely need to install GWE as `root` in order to use it. In this case, replace the `./install.sh` from the command, above with `sudo ./install.sh`. For example:
 
   ```
   ssh <USER>@<GATEWAY_IP> "cd /opt
@@ -207,17 +209,17 @@ Once the installation is complete, you will need to configure GWE for your IoT s
 You can determine the serial number of your gateway in two ways:
 
   * The MAC address
-  * Any Other Serial Number
+  * Any other serial number
 
 ### Use the MAC Address of an Internet Interface
 
-GWE can be configured to use the MAC address of the internet interface of your choosing (e.g., `eth0`, `wlan0`, `ppp0`, etc.). Using the MAC address of a piece of hardware like an ethernet port, a wifi port or a cellular modem is a great option for deconflicting serial numbers and offers a standard way of identifying hardware between customers, vendors, manufacturers and most others in the chain of IoT goods and services.
+GWE can be configured to use the MAC address of the Internet interface of your choosing (e.g., `eth0`, `wlan0`, `ppp0`, etc.). Using the MAC address of a piece of hardware like an ethernet port, a Wi-Fi port, or a cellular modem is a great option for deconflicting serial numbers and offers a standard way of identifying hardware between customers, vendors, manufacturers, and most others in the chain of IoT goods and services.
 
-When configured this way, GWE uses the MAC address of the internet interface (i.e. iface) you specify with ALL CAPS and ':' formatted. To view a list of the available internet interfaces on your gateway, use the `ifconfig` command.
+When configured this way, GWE uses the MAC address of the Internet interface (i.e., iface) you specify with ALL CAPS and ':' formatted. To view a list of the available Internet interfaces on your gateway, use the `ifconfig` command.
 
   **Example**: 
 
-  The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a. *uuid*). After configuring GWE, it prints the new configuration to the console.
+  The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a., *uuid*). After configuring GWE, it prints the new configuration to the console.
 
   ```
   $ gwe --set-iface eth0 -d DEBUG
@@ -232,13 +234,13 @@ When configured this way, GWE uses the MAC address of the internet interface (i.
 
   To see what the MAC address of any interface is, you can use the `gwe --mac-address IFACE` command.
 
-### Use a Your Own Serial Number
+### Use Your Own Serial Number
 
-Depending on the needs of you IoT solution, you may need to specify your own serial number. To do this, use the `--set-uuid UUID` command-line switch.
+Depending on the needs of your IoT solution, you may need to specify your own serial number. To do this, use the `--set-uuid UUID` command-line switch.
 
   **Example**: 
 
-  The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a. *uuid*). After configuring GWE, it prints the new configuration to the console.
+  The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a., *uuid*). After configuring GWE, it prints the new configuration to the console.
 
   ```
   $ gwe --set-uuid 12345
@@ -252,13 +254,13 @@ Depending on the needs of you IoT solution, you may need to specify your own ser
 
 If you configure GWE with a uuid, it will override any iface configuration and the MAC address will not be used. This is true even if you change the iface configuration, so the only way GWE will use a MAC address again as its serial number is if you clear, or re-initialize, the uuid configuration to "''".
 
-You can use the following command to clear the uuid, or any other, configuration to start over. 
+You can use the following command to clear the uuid or any other configuration to start over. 
 
   ```
   gwe --set-uuid \'\'
   ```
 
-## Configure the GWE Product ID On Your Gateway
+## Configure the GWE Product ID on Your Gateway
 
 Using the PID from a previous step, use the following command to configure GWE for your Murano account:
 
@@ -282,16 +284,16 @@ Due to legacy reasons, GWE uses the PRODUCT_ID as both the *vendor* and *model* 
 
 ## Add a Device
 
-Navigate to the Products section of the Murano web UI, select the GWE product (*whatever you named it*) and click on the DEVICES tab. When you click the **+ NEW DEVICE** button, use the serial number GWE is configured for as the serial number for your new Murano GWE device and name it.
+Navigate to the *Products* tab of the Murano web UI, select the GWE product (whatever you named it), and click on the *DEVICES* tab. When you click the "NEW DEVICE" button, use the serial number GWE is configured for as the serial number for your new Murano GWE device and name it.
 
-You will see this new device appear in the list of available devices in the GWE Product of your Murano account. If you are following this Getting Started guide in order, the new device should be showing a STATUS of `notactivated`.
+You will see this new device appear in the list of available devices in the GWE product of your Murano account. If you are following this getting-started guide in order, the new device should be showing a *STATUS* of `notactivated`.
 
 
 ## Reboot
 
 To complete the installation, you will need to reboot the gateway. 
 
-The reason we deem the installation incomplete until a gateway reboot is because it is the last step in determining whether or not GWE will start-on-boot. If after rebooting the gateway GWE is not running, then something went wrong with the installation (*if this happens please visit [the community forum](https://community.exosite.com/c/GWE)*). 
+The installation is incomplete until a gateway reboot because it is the last step in determining whether or not GWE will start on boot. If after rebooting the gateway GWE is not running, then something went wrong with the installation (if this happens, please visit [the community forum](https://community.exosite.com/c/GWE)). 
 
 To reboot, you can toggle the power or use the following command:
 
@@ -305,7 +307,7 @@ To reboot, you can toggle the power or use the following command:
 
 Watch for new data in your new Murano GWE device.
 
-Once the reboot has completed, you will notice that `supervisord` and `gwe` processes are running in the output of the `ps -ef` command. Sometimes there are alot of processes and the `ps -ef` command can be too much to read through. You can filter the output with `grep` (e.g., `ps -ef | grep 'super\|gwe\|gmq'`). You can also use the `supervisorctl status` command to view the status of the GWE applications.
+Once the reboot has completed, you will notice that `supervisord` and `gwe` processes are running in the output of the `ps -ef` command. Sometimes there are a lot of processes and the `ps -ef` command can be too much to read through. You can filter the output with `grep` (e.g., `ps -ef | grep 'super\|gwe\|gmq'`). You can also use the `supervisorctl status` command to view the status of the GWE applications.
 
 ```
 supervisorctl status
@@ -315,8 +317,8 @@ gwe                           RUNNING    pid 620, 00:01:38
 
 A few seconds after rebooting the gateway you should see two things change on the GWE device in your Murano account.
 
-  * The device's STATUS should be showing `activated`.
-  * Data appear in the aliases/resources of your GWE device.
+  * The device's STATUS should be showing `activated`
+  * Data appears in the aliases/resources of your GWE device
 
 You can also check to see if the gateway has successfully activated by checking for the existence of a CIK in the GWE configuration with the following command:
 
@@ -343,7 +345,7 @@ For additional functionality of Exosite products available on your gateway, take
 
 ### The supervisorctl cli
 
-The `supervisorctl` command-line interface is extremely powerful and incredibly useful. It is highly recommended that you run this command (*`supervisorctl` using `sudo` if necessary*) and then type `help` when you've entered the interactive cli.
+The `supervisorctl` command-line interface is extremely powerful and incredibly useful. It is highly recommended that you run this command (*`supervisorctl` using `sudo` if necessary*) and then type `help` when you have entered the interactive cli.
 
   **Example**:
 
