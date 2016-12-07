@@ -1,12 +1,12 @@
 # Custom Gateway Applications
 
-By itself, ExositeReady™ Gateway Engine (GWE) hosts Custom Gateway Applications (CGA) and Gateway Message Queuing server waits for incoming requests from Custom Gateway Applications, so, without a Custom Gateway Application to host, GWE does not really do much. This section is dedicated to defining how Custom Gateway Applications fit into the GWE hosting framework.
+The ExositeReady™ Gateway Engine is a collection of processes and libraries that make a gateway hosting framework for IoT applicaitons. By themselves, Gateway Engine (GWE) hosts Custom Gateway Applications (CGA) and Gateway Message Queuing (GMQ) server waits for incoming requests from Custom Gateway Applications, so, without a Custom Gateway Application to host, the ExositeReady™ Gateway Engine does not really do much. 
 
-The illustration, below, shows the basic layout of a typical IoT gateway from the physical layer up to the cloud.
+This section is dedicated to defining how Custom Gateway Applications fit into the GWE hosting framework. The illustration, below, shows the basic layout of a typical IoT gateway from the physical layer up to the cloud.
 
 ![communication_topology](/exositeready/gwe/communication_topology.png)
 
-This illustration shows an application written in the context of and hosted by GWE. As shown, the custom application has flexible options as far as how it can communicate on the internet and with Exosite. As a developer of a CGA, you may choose to use the Gateway Message Queue (GMQ) for writing sensor data, Device Client (GDC) for reading configuration data and some other tool like `curl` or another library for some other service (e.g., ntpdate, ping, a nodejs library, etc.).
+This illustration shows an application (*Custom Gateway Application*) written in the context of and hosted by GWE. As shown, the custom application has flexible options as far as how it can communicate on the internet and with Exosite. As a developer of a CGA, you may choose to use the Gateway Message Queue (GMQ) for writing sensor data, Device Client (GDC) for reading configuration data and some other tool like `curl` or another library for some other service (*e.g., ntpdate, ping, a nodejs library, etc*).
 
 The Custom Gateway Application is the customized logic the developer writes for a specific IoT solution. A Custom Gateway Application should be designed to be installed via the GWE installer and OTAU feature.
 
@@ -14,39 +14,44 @@ The Custom Gateway Application is the customized logic the developer writes for 
 
 Navigate to the [Release Packages](release_packages.md) section and download the latest copy of GWE to your development machine.
 
-It is highly recommended that you create a virtual Python environment before installing GWE onto your development machine.
+### Optional Setup
+
+It is recommended that you create a virtual Python environment before installing GWE onto your development machine. The example below uses the popular development tool `virtualenvwrapper`.
 
 ```
-pip install virtualenvwrapper
 mkvirtualenv gwe-devtools --python=python2.7
 ```
 
+### Get Dev Tools from Gateway Engine Release
+
 Unpack the GWE release and install the development tools. If using a virtual python environment, make sure to activate it with `workon gwe-devtools` before proceeding.
 
+Installing the Dev Tools is different than installing onto an actual gateway for IoT operations. The `gwe` callable contains some useful developer tools, but we don't need the `gwe` or `gmq` processes running. Below is a series of commands that will get `gdc` and `gwe` command line tools installed.
+
 ```
-mkdir ~/sandbox
-mv path/to/GatewayEngine/download.tar.gz ~/sandbox
-cd ~/sandbox
-tar zxvf GatewayEngine.v...tar.gz
+mkdir ~/code
+mv path/to/GatewayEngine.v*.tar.gz ~/code
+cd ~/code
+tar zxvf GatewayEngine.v*.tar.gz
 cd gateway-engine
-python GatewayEngine/cli.py -d DEBUG -I device-client.v*.tar.gz
+python setup.py gdc
 python setup.py install
 ```
 
 ## Initialize a Repository
 
-The first thing to do is to create a new sandbox folder to put the CGA files. If using a virtual python environment, make sure to activate it with `workon gwe-devtools` before proceeding.
+The first thing to do when creating a CGA is to create a new sandbox folder to put the application files and supporting scripts and documents.
 
 ### Project Directory
 
 ```
-mkdir ~/sandbox/my_gwe_hosted_app
-cd ~/sandbox/my_gwe_hosted_app
+mkdir ~/code/my_gwe_hosted_app
+cd ~/code/my_gwe_hosted_app
 ```
 
-Executing the following command will prompt you for a name for the new buildfile, the name you want to give the new app and the version of the new app. After the buildfile is created, a summary of the buildfile contents are printed to the console. See the example below.
-
 ### Create Buildfile
+
+Executing the `gwe --create-buildfile` command will prompt you for a name for the new buildfile, the name you want to give the new app and the version of the new app. After the buildfile is created, a summary of the buildfile contents are printed to the console. See the example below.
 
 ```
 $ gwe --create-buildfile
@@ -122,7 +127,12 @@ Build file location:
 
 ### Create `install.sh` Script
 
-To get started, create an `install.sh` file GWE can use to install `example.sh` to `/usr/local/bin`. Making sure to use a shebang as the first line of the file and having the correct file mode is important.
+Any GWE-hosted application needs an installer. GWE uses the file `install.sh` for all CGA installs. Any application will need this file so GWE can install the CGA.
+
+Below is an example for creating an `install.sh` file GWE that can use to install application `example.sh` to `/usr/local/bin`. 
+
+  **Note**: 
+  Make sure to use a 'shebang' as the first line of the `install.sh` file and that it the correct file mode (*i.e. it has the `x` bit set*).
 
 ```
 echo '#!/bin/sh' > install.sh
