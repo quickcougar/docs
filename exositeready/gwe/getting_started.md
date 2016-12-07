@@ -171,30 +171,30 @@ mr product spec pull
 
 Run the following commands from your development machine to copy GWE to your gateway:
 
-    ```
-    ssh <USER>@<GATEWAY_IP> "mkdir /opt"
-    scp ~/code/GatewayEngine.v*.tar.gz <USER>@<GATEWAY_IP>:/opt 
-    ```
+  ```
+  ssh <USER>@<GATEWAY_IP> "mkdir /opt"
+  scp ~/code/GatewayEngine.v*.tar.gz <USER>@<GATEWAY_IP>:/opt 
+  ```
 
 At this point, you have downloaded the latest release of GWE and copied it to your gateway.
 
 Run the following command to untar the release package and install GWE onto your gateway:
 
-    ```
-    ssh <USER>@<GATEWAY_IP> "cd /opt
-      tar zxvf GatewayEngine.v*.tar.gz
-      cd gateway-engine
-      ./install.sh"
-    ```
+  ```
+  ssh <USER>@<GATEWAY_IP> "cd /opt
+    tar zxvf GatewayEngine.v*.tar.gz
+    cd gateway-engine
+    ./install.sh"
+  ```
 
-    **NOTE:** In some Linux environments, you will need to use Super-User permissions to run the installer. If the type of Linux you're using has both `root` and non-`root` users, then in order to use GWE, you'll likely need to install GWE as `root`. In this case, replace the `./install.sh` from the command, above with `sudo ./install.sh`. For example:
+  **NOTE:** In some Linux environments, you will need to use Super-User permissions to run the installer. If the type of Linux you're using has both `root` and non-`root` users, then in order to use GWE, you'll likely need to install GWE as `root`. In this case, replace the `./install.sh` from the command, above with `sudo ./install.sh`. For example:
 
-        ```
-        ssh <USER>@<GATEWAY_IP> "cd /opt
-          tar zxvf GatewayEngine.v*.tar.gz
-          cd gateway-engine
-          sudo ./install.sh"
-        ```
+  ```
+  ssh <USER>@<GATEWAY_IP> "cd /opt
+    tar zxvf GatewayEngine.v*.tar.gz
+    cd gateway-engine
+    sudo ./install.sh"
+  ```
 
 ### The Installation Log File
 
@@ -215,48 +215,48 @@ GWE can be configured to use the MAC address of the internet interface of your c
 
 When configured this way, GWE uses the MAC address of the internet interface (i.e. iface) you specify with ALL CAPS and ':' formatted. To view a list of the available internet interfaces on your gateway, use the `ifconfig` command.
 
-        **Example**: 
+  **Example**: 
 
-        The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a. *uuid*). After configuring GWE, it prints the new configuration to the console.
+  The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a. *uuid*). After configuring GWE, it prints the new configuration to the console.
 
-            ```
-            $ gwe --set-iface eth0 -d DEBUG
-            Found interface 'eth0' with MAC address (serial/uuid): FF:10:C2:9B:A8:46
-            [device]
-            cik = ''
-            model = ''
-            vendor = ''
-            uuid = ''
-            iface = eth0
-            ```
+  ```
+  $ gwe --set-iface eth0 -d DEBUG
+  Found interface 'eth0' with MAC address (serial/uuid): FF:10:C2:9B:A8:46
+  [device]
+  cik = ''
+  model = ''
+  vendor = ''
+  uuid = ''
+  iface = eth0
+  ```
 
-        To see what the MAC address of any interface is, you can use the `gwe --mac-address IFACE` command.
+  To see what the MAC address of any interface is, you can use the `gwe --mac-address IFACE` command.
 
 ### Use a Your Own Serial Number
 
 Depending on the needs of you IoT solution, you may need to specify your own serial number. To do this, use the `--set-uuid UUID` command-line switch.
 
-        **Example**: 
+  **Example**: 
 
-        The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a. *uuid*). After configuring GWE, it prints the new configuration to the console.
+  The example, below, shows the command for configuring GWE to use the MAC address of iface `eth0` as its serial number (a.k.a. *uuid*). After configuring GWE, it prints the new configuration to the console.
 
-            ```
-            $ gwe --set-uuid 12345
-            [device]
-            cik = ''
-            model = ''
-            vendor = ''
-            uuid = 12345
-            iface = eth0
-            ```
+  ```
+  $ gwe --set-uuid 12345
+  [device]
+  cik = ''
+  model = ''
+  vendor = ''
+  uuid = 12345
+  iface = eth0
+  ```
 
 If you configure GWE with a uuid, it will override any iface configuration and the MAC address will not be used. This is true even if you change the iface configuration, so the only way GWE will use a MAC address again as its serial number is if you clear, or re-initialize, the uuid configuration to "''".
 
 You can use the following command to clear the uuid, or any other, configuration to start over. 
 
-    ```
-    gwe --set-uuid \'\'
-    ```
+  ```
+  gwe --set-uuid \'\'
+  ```
 
 ## Configure the GWE Product ID On Your Gateway
 
@@ -268,16 +268,16 @@ gwe --set-product-id <PRODUCT_ID>
 
 Due to legacy reasons, GWE uses the PRODUCT_ID as both the *vendor* and *model* entries in the GWE configuration. See the example below:
 
-    **Example:**
-    ```
-    $ gwe --set-product-id dubhxzv0r4e1m7vj
-    [device]
-    cik = ''
-    model = dubhxzv0r4e1m7vj
-    vendor = dubhxzv0r4e1m7vj
-    uuid = 12345
-    iface = eth0
-    ```
+  **Example:**
+  ```
+  $ gwe --set-product-id dubhxzv0r4e1m7vj
+  [device]
+  cik = ''
+  model = dubhxzv0r4e1m7vj
+  vendor = dubhxzv0r4e1m7vj
+  uuid = 12345
+  iface = eth0
+  ```
 
 
 ## Add a Device
@@ -295,9 +295,9 @@ The reason we deem the installation incomplete until a gateway reboot is because
 
 To reboot, you can toggle the power or use the following command:
 
-    ```
-    reboot
-    ```
+  ```
+  reboot
+  ```
   
 **NOTE:** GWE uses `supervisord` to start itself on boot, and once it starts, it will start GWE as well as all other installed default and custom gateway applications.
 
@@ -320,23 +320,23 @@ A few seconds after rebooting the gateway you should see two things change on th
 
 You can also check to see if the gateway has successfully activated by checking for the existence of a CIK in the GWE configuration with the following command:
 
-    ```
-    gwe --gateway-cik
-    ```
+  ```
+  gwe --gateway-cik
+  ```
 
-    **Example**: A non-activated GWE.
+  **Example**: A non-activated GWE.
 
-        ```
-        $ gwe --gateway-cik
-        ''
-        ```
+  ```
+  $ gwe --gateway-cik
+  ''
+  ```
 
-    **Example**: An activated GWE.
+  **Example**: An activated GWE.
 
-        ```
-        $ gwe --gateway-cik
-        3803226073f6f2feb51a9010bd1d3e53143214a7
-        ```
+  ```
+  $ gwe --gateway-cik
+  3803226073f6f2feb51a9010bd1d3e53143214a7
+  ```
 
 
 For additional functionality of Exosite products available on your gateway, take a look at the output of the following commands:
@@ -345,21 +345,21 @@ For additional functionality of Exosite products available on your gateway, take
 
 The `supervisorctl` command-line interface is extremely powerful and incredibly useful. It is highly recommended that you run this command (*`supervisorctl` using `sudo` if necessary*) and then type `help` when you've entered the interactive cli.
 
-    **Example**:
+  **Example**:
 
-    ```
-    $ supervisorctl
-    gmq                                RUNNING      pid 1184, uptime 1:02:51
-    gwe                                RUNNING      pid 1184, uptime 1:02:51
-    supervisor> help
+  ```
+  $ supervisorctl
+  gmq                                RUNNING      pid 1184, uptime 1:02:51
+  gwe                                RUNNING      pid 1184, uptime 1:02:51
+  supervisor> help
 
-    default commands (type help <topic>):
-    =====================================
-    add     clear    fg        open   quit     remove    restart    start   update
-    avail   exit     maintail  pid    reload   reread    shutdown   stop    version
+  default commands (type help <topic>):
+  =====================================
+  add     clear    fg        open   quit     remove    restart    start   update
+  avail   exit     maintail  pid    reload   reread    shutdown   stop    version
 
-    supervisor> 
-    ```
+  supervisor> 
+  ```
 
 ### The Device Client cli
 
