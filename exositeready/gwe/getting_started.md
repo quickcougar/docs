@@ -125,7 +125,7 @@ The default location MrMurano uses for spec files is `$PWD/specs`. This can be o
 mr config location.specs relative/path/to/folder/containing/spec.file
 ```
 
-**Example:**
+  **Example:**
 
   ```
   cd ~/code/gateway-engine
