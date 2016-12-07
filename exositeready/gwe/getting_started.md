@@ -49,8 +49,6 @@ take action on in order to activate your account and log in.
 ## Create and Configure a Product
 Once your account is set up, add a Product and name it (e.g. "gateway-engine", "my-product", etc). 
 
-Once your account is set up, add a new product and name it (e.g., "Gateway Engine," "My Product," etc). 
-
 Once you have a product, you must configure it with resources either using **MrMurano** (*recommended*) or manually by using the Murano web UI.
 
 ### Configure a Product Using MrMurano
@@ -127,12 +125,12 @@ The default location MrMurano uses for spec files is `$PWD/specs`. This can be o
 mr config location.specs relative/path/to/folder/containing/spec.file
 ```
 
-    **Example:**
+**Example:**
 
-    ```
-    cd ~/code/gateway-engine
-    mr config location.specs specs
-    ```
+  ```
+  cd ~/code/gateway-engine
+  mr config location.specs specs
+  ```
 
 Verify the path with `mr config --dump`.
 
