@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link  href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc' class="no-literate">
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION </a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">API Reference</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Guides</p>
+          <li><a class="level-0" href="/murano/guides/keystore-service/">Record Product Metrics</a></li>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><h1 id="over-the-air-updates">Over the Air Updates</h1>
+<p>Performing Over the Air Updates to gateways is the core function of
+Gateway Engine and, more specifically, the <code>gwe</code> process.</p>
+<p>Over the Air Updating can be tricky. To help you understand how Gateway
+Engine&#39;s OTAU feature works, the diagram below was put together to show
+the sequence that results in a Gateway Engine Over the Air Update.</p>
+<p>  <img src="over_the_air_updates_image.png" alt="Alt text"></p>
+<p>In words, this diagram states that Gateway Engine will check for the
+<code>engine_fetch</code> alias for specially formatted JSON objects that contain
+instructions for new Custom Gateway Applications or updates to existing
+ones to be downloaded and installed. If there&#39;s nothing to download and
+install it will sleep for the amount of seconds configured in the
+<code>update_interval</code> alias.</p>
+<p><strong>NOTE:</strong> The default value <code>update_interval</code> that <code>GatewayEngine</code> uses when it
+starts for the 1st time is <code>14400</code> seconds. This comes out to 12 hours
+(twice/day). If you want to shorten this, write the amount of seconds
+you want <code>GatewayEngine</code> to sleep before it checks in again in the
+<code>update_interval</code> alias. Once it reads this new value, it will &quot;clear&quot;
+the alias (i.e. write an empty string).</p>
+<p>The <code>update_interval</code> can be changed before <code>gwe</code> ever starts with the
+following command:</p>
+<pre><code>gwe --set-update-interval &lt;INTERVAL&gt;
+</code></pre><p>If this command is run while <code>gwe</code> is running, then the process will
+need to be restarted in order for the change to be applied.</p>
+<pre><code>supervisorctl restart gwe
+</code></pre><p>During the development of you Custom Gateway Application, if you&#39;re
+not on a cellular network or otherwise aren&#39;t concerned with network
+bandwidth usage, use a really fast <code>update_interval</code>. You can set the
+<code>update_interval</code> to as low as one second. Doing so will ensure that
+as soon as you have updates to deploy to the gateway, they will be
+installed immediately.</p>
+<p>The JSON object must be formatted like this:</p>
+<pre><code>{&quot;install&quot;: [{&quot;name&quot;: &quot;&lt;APP_NAME&gt;.v&lt;VERSION&gt;.tar.gz&quot;}]}
+</code></pre><p>In order for Gateway Engine to be able to download the tarball and
+install it, the tarball must be uploaded to the Gateway Engine Content
+Area of One Platform. For instructions on uploading your application
+tarball and sending the installation command to Gateway Engine, see the
+<a href="https://gateway-engine.exosite.io/gateway-engine/README.html#upload-the-app-tarball-to-your-murano-product-id-s-content-area">Gateway Engine
+README</a>.</p>
+</div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>

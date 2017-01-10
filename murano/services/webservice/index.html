@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc' class="no-literate">
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION</a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><a class="nav_orange" href="https://exosite.com/business/signup">Sign Up For Murano</a></li> 
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">API Reference</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Guides</p>
+          <li><a class="level-0" href="/murano/guides/keystore-service/">Record Product Metrics</a></li>
+          <li><a class="level-0" href="/murano/guides/user-management/">User Management</a></li>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><h1 id="custom-api-gateway-service">Custom API Gateway Service</h1>
+<blockquote>
+<p>Custom API for communication with end-user and external-client applications using <strong>HTTPS</strong> protocol.<br/> Endpoints are configured from <a href="https://www.exosite.com/business/solutions">Murano portal</a> interface under your solution routes or from exosite-cli tools.<br/> Each request reaching your API endpoints will trigger the execution of your lua script. See the <em>request</em> event for more information.</p>
+</blockquote>
+<h3 id="operations">Operations</h3>
+<h4 id="webservice_response">Webservice_response</h4>
+<ul>
+<li><a href="#apireply">Webservice.apiReply()</a>  - Reply to API request</li>
+</ul>
+<h3 id="events">Events</h3>
+<ul>
+<li><a href="#request">request</a>  - HTTP request</li>
+</ul>
+<h2 id="operations">Operations</h2>
+<h3 id="webservice_response">Webservice_response</h3>
+<hr>
+<h4 id="apireply">apiReply</h4>
+<blockquote>
+<p>Reply to a pending API HTTP request with a standard HTTP response. This operation is used after receiving a webservice <em>request</em> event.<br/> When using Murano <em>endpoint script</em>, you DO NOT need to use this operation manually as the Murano webservice router already handles it for you at the end of the endpoint script execution. <br/><br/> However, if you want to set your own endpoint routing mechanism, you can directly edit your solution webServer request <strong>eventHandler script</strong>. In such case the <em>Webservice.apiReply</em> needs to be called manually and the <em>request_id</em> and <em>service_id</em> parameters have to be provided.<br/> Important! Any <strong>endpoint script</strong> changes will reset the default routing mechanism and <strong>eventHandler script</strong> changes will be lost.</p>
+</blockquote>
+<h5 id="arguments">Arguments</h5>
+<h6 id="parameters-object-object-containing-service-call-parameters-">parameters  -  <em>object</em>  -  <em>Object containing service call parameters.</em></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>request_id</strong></td>
+<td style="text-align:center"><em>string</em></td>
+<td>The request ID provided in the request data. Automatically set when using Murano <em>endpoint script</em>.</td>
+</tr>
+<tr>
+<td><strong>code</strong></td>
+<td style="text-align:center"><em>integer</em> {..999}</td>
+<td>The HTTP response status code</td>
+</tr>
+<tr>
+<td>headers</td>
+<td style="text-align:center"><em>object</em></td>
+<td>HTTP response headers</td>
+</tr>
+<tr>
+<td><strong>message</strong></td>
+<td style="text-align:center"><em>string</em></td>
+<td>The HTTP response body content. From <em>endpoint scripts</em>, Lua Table are transformed to the equivalent JSON structure.</td>
+</tr>
+<tr>
+<td>(deprecated) server_ip</td>
+<td style="text-align:center"><em>string(ipv4)</em></td>
+<td>The server IP address holding the HTTP connection. Provided in request data. Automatically set when using Murano <em>endpoint script</em>.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<h6 id="response-successfully-sent-nil-">Response successfully sent  -  <em>nil</em></h6>
+<p>Response successfully sent</p>
+<h6 id="error-response-object-">Error response  -  <em>object</em></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td style="text-align:center"><em>string</em></td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>message</td>
+<td style="text-align:center"><em>string</em></td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h5 id="example">Example</h5>
+<pre><code class="lang-lua">-- In webservice endpoint script:
+response.code = 201 response.message = {hello = &quot;world&quot;} response.headers[&quot;x-my-custom-header&quot;] = &quot;my header content&quot;
+-- In webservice eventHandler script:
+local responseData = {
+  [&quot;request_id&quot;] = request.request_id,
+  code = 201,
+  message = &quot;{\&quot;hello\&quot;:\&quot;world\&quot;}&quot;,
+  headers = { [&quot;content-type&quot;] = &quot;application/json&quot; }
+} Webservice.apiReply(responseData)
+</code></pre>
+<h2 id="events">Events</h2>
+<hr>
+<h4 id="request">request</h4>
+<blockquote>
+<p>An HTTP request has reached your custom API endpoint and triggers the webservice eventHandler script execution. This request is waiting for a response through the <em>apiReply</em> operation.<br/> All requests trigger the same eventHandler script. However, for your convenience, Murano provides out-of-the-box endpoint routing wrapper triggering <strong>endpoint scripts</strong>.<br/> So when writing an <strong>endpoint script</strong>, you simply use the <em>response</em> parameters or directly return the desired response body content. As the <em>apiReply</em> response is automatically made at the end of each endpoint scripts by the Murano routing wrapper. <br/><br/> However, if you want to set your own endpoint routing mechanism, you can directly edit your solution webServer eventHandler script. See <em>apiReply</em> operation for more information.<br/> Important! Any endpoint script changes will reset the default routing mechanism and eventHandler script changes will be lost. <br/><br/> <strong>Endpoint script default values:</strong><br/> response.code: 200 <br/> response.message: &quot;Ok&quot; <br/> response.headers[&quot;content-type&quot;] = &quot;plain/text&quot; if message is a &quot;string&quot;, &quot;application/json&quot; otherwise.</p>
+</blockquote>
+<h5 id="arguments">Arguments</h5>
+<h6 id="request-object-the-http-request-data-">request  -  <em>object</em>  -  <em>The HTTP request data</em></h6>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td style="text-align:center"><em>string</em></td>
+<td>The request complete URI including API domain name.</td>
+</tr>
+<tr>
+<td>body</td>
+<td style="text-align:center"><em>object</em>, <em>string</em></td>
+<td>The HTTP request json body content. JSON data will be decoded automatically in a Lua table structure. Otherwise a string is provided.</td>
+</tr>
+<tr>
+<td>route</td>
+<td style="text-align:center"><em>string</em></td>
+<td>The endpoint path, matching the custom API endpoint configuration on <a href="https://www.exosite.com/business/solutions">Murano portal</a></td>
+</tr>
+<tr>
+<td>method</td>
+<td style="text-align:center">&quot;POST&quot;, &quot;PUT&quot;, &quot;GET&quot;, &quot;DELETE&quot;, &quot;PATCH&quot;, &quot;OPTION&quot;</td>
+<td>The HTTP method of the request, matching the custom API endpoint configuration on <a href="https://www.exosite.com/business/solutions">Murano portal</a></td>
+</tr>
+<tr>
+<td>headers</td>
+<td style="text-align:center"><em>object</em></td>
+<td>The HTTP request headers</td>
+</tr>
+<tr>
+<td>server_ip</td>
+<td style="text-align:center"><em>string(ipv4)</em></td>
+<td>The address of the API server holding the pending HTTP request. Only for webservice <strong>eventhandler scripts</strong> when calling <em>apiReply</em> operation.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td style="text-align:center"><em>integer</em></td>
+<td>HTTP request reception time as Unix timestamp.</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td style="text-align:center"><em>object</em></td>
+<td>The HTTP request query parameters as a Map containing both from path and query parameters.<br/> Path parameters are set on the <a href="https://www.exosite.com/business/solutions">Murano portal</a> routes by using &#39;/myendpoint/{pathParameterName}&#39;. Query parameters are dynamically set from the url parameters following the format &#39;/myendpoint?queryParameterNameOne=hello&amp;queryParameterNameTwo=world&#39;.</td>
+</tr>
+<tr>
+<td>request_id</td>
+<td style="text-align:center"><em>string</em></td>
+<td>Unique request ID use to match with the response. Only for webservice <strong>eventhandler scripts</strong> when calling <em>apiReply</em> operation.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="example">Example</h5>
+<pre><code class="lang-lua">-- In a webservice endpoint script:
+response.code = 201 response.message = {hello = &quot;world&quot;} response.headers[&quot;x-my-custom-header&quot;] = &quot;my header content&quot;
+-- Same behavior in EventHandler script:
+function handle_webservice_request (request)
+
+  local responseData = {
+    [&quot;request_id&quot;] = request.request_id,
+    code = 201,
+    message = &quot;{\&quot;hello\&quot;:\&quot;world\&quot;}&quot;,
+    headers = { [&quot;content-type&quot;] = &quot;application/json&quot; }
+  }
+  Webservice.apiReply(responseData)
+
+end
+</code></pre>
+</div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>

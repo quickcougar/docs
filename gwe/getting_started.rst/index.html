@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link  href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc' class="no-literate">
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION </a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">API Reference</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Guides</p>
+          <li><a class="level-0" href="/murano/guides/keystore-service/">Record Product Metrics</a></li>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><h1 id="getting-started">Getting Started</h1>
+<p>This section is provided to help you quickly download Gateway Engine,
+install it onto your gateway and start using it as quickly and easily as
+possible. Once you&#39;ve completed this section you will have a Gateway
+Engine installed and running on a gateway.</p>
+<h2 id="minimum-requirements">Minimum Requirements</h2>
+<p>Before proceeding to <a href="https://github.com/exosite/docs/blob/gwe/gwe/getting_started.rst.md#step-one">Step One</a>, you should first verify that your
+gateway has the minimum requirements for running Gateway Engine.</p>
+<ul>
+<li>Linux OS</li>
+<li>Python 2.7.9+</li>
+<li>Network interface (<code>eth0</code>, <code>wlan0</code>, <code>ppp0</code>, etc.)</li>
+<li>GNU shell</li>
+<li>128MB Flash</li>
+<li>64MB RAM</li>
+</ul>
+<h1 id="step-one">Step One</h1>
+<p>Sign up for a <a href="https://exosite.com/murano/">Murano account</a>. Once your
+account is set up, add a device to your Murano Product and name it
+&quot;Gateway Engine&quot;. Copy down the MAC address of your Gateway and use it
+as the serial number for your new Murano Gateway Engine device. Once you
+have a Gateway Engine device in your Murano Product, you must add
+resources to it with one of two ways, either manually or by using the MrMurano tool.</p>
+<h2 id="manually">Manually</h2>
+<p>The table, below, shows the resources you must add, what to name them
+and what format to choose for them.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>usage_report</td>
+<td>string</td>
+<td>Gateway Engine sends a report of all processes using its resources (<code>gmq</code>, <code>device-client</code>) to send data to Murano. This report contains information about how much network bandwidth is being consumed as well as other meta data about network requests.</td>
+</tr>
+<tr>
+<td>engine_report</td>
+<td>string</td>
+<td>Gateway Engine reports information about what applications are installed and other meta data like uptime, exit codes, and versions.</td>
+</tr>
+<tr>
+<td>device_info</td>
+<td>string</td>
+<td>Gateway Engine reports filesystem and OS data like OS and kernel version as well as free memory and disk space usage.</td>
+</tr>
+<tr>
+<td>engine_fetch</td>
+<td>string</td>
+<td>Gateway Engine regularly checks this dataport for formatted messages containing instructions on new apps and updates to install.</td>
+</tr>
+<tr>
+<td>fetch_status</td>
+<td>string</td>
+<td>Once an app is installed over-the-air or an update to an app is executed, Gateway Engine reports the STDOUT and STDERR from the app installer.</td>
+</tr>
+<tr>
+<td>update_interval</td>
+<td>string</td>
+<td>This value, in seconds, is the delay between each series of Gateway Engine reports and OTAU checkins.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="use-mrmurano">Use MrMurano</h2>
+<p>The <a href="https://github.com/tadpol/MrMurano">MrMurano tool</a> is a
+command-line tool you can configure and use with your Murano Solutions
+and Products. Once you configure MrMurano, you can use the following
+commands to create the required Gateway Engine resources to the Murano
+device. </p>
+<pre><code># command to create spec.yaml file
+cat &lt;&lt; EOF &gt; spec.yaml
+---
+resources:
+- alias: usage_report
+  format: string
+- alias: engine_report
+  format: string
+- alias: device_info
+  format: string
+- alias: engine_fetch
+  format: string
+- alias: fetch_status
+  format: string
+- alias: update_interval
+  format: string 
+EOF
+# command to apply the spec.yaml file to the new Gateway Engine device in your Murano Product.
+mr product spec --file spec.yaml
+</code></pre><p><strong>NOTE:</strong> When signing up for a new account, there will be emails you will need to
+take action on in order to activate your account and login.</p>
+<h1 id="step-two">Step Two</h1>
+<p>Download, install, and configure Gateway Engine onto your gateway.</p>
+<p>To download the latest version of the Public Release of Gateway Engine,
+follow these steps:</p>
+<ol>
+<li>Navigate to the <a href="https://github.com/exosite/docs/blob/gwe/gwe/release_packages.rst.md#gateway-engine-release-packages">Gateway Engine Release Packages</a> section and follow the instructions to
+download Gateway Engine.</li>
+<li><p>Run these commands to copy Gateway Engine to your gateway (the
+actual filename in the command may differ):</p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;mkdir /opt&quot;
+scp GatewayEngine.v1-1-2.tar.gz &lt;USER&gt;@&lt;GATEWAY_IP&gt;:/opt
+</code></pre><p>At this point, you have downloaded the latest release of Gateway Engine and copied it to your gateway.</p>
+</li>
+<li><p>Run this command to untar the release package and install Gateway
+Engine onto your gateway:</p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;cd /opt
+  tar zxvf GatewayEngine.v1-1-2.tar.gz
+  cd gateway-engine
+  ./install.sh&quot;
+</code></pre><p><strong>NOTE:</strong> In some Linux environments, you&#39;ll need to use Super-User permissions to run the installer. In this case, replace the <code>./install.sh</code> command to:</p>
+<pre><code>sudo ./install.sh
+</code></pre></li>
+<li><p>Once the installation completes, you&#39;ll need to configure Gateway
+Engine for your IoT solution and Exosite account. This will require
+one piece of information from your Murano account and you&#39;ll need to
+make a decision about what serial number to use for your gateway.</p>
+<ol>
+<li>In your Murano account, navigate to your Product and click on
+the Info tab. Copy the Product ID and use it in the commands,
+below, in place of &lt;PRODUCT_ID&gt;.</li>
+<li><p>Determine the serial number of your gateway. Gateway Engine is
+programmed to retrieve the MAC address from the internet
+interface of your choosing (e.g. <code>eth0</code>, <code>wlan0</code>,
+<code>ppp0</code>, etc.) when the <code>--set-iface</code> command-line switch
+is used. Or you can just specify any serial number you want
+with the <code>--set-uuid</code> command line switch.</p>
+</li>
+<li><p>Once you&#39;ve gathered this information and determined what serial
+number to use for your gateway (interface MAC address or custom
+serial number), run the following command to configure Gateway
+Engine:</p>
+</li>
+</ol>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;gwe --set-product-id &lt;PRODUCT_ID&gt; --set-iface &lt;THE_INTERFACE&gt;&quot;&quot;
+</code></pre><p><strong>Example:</strong></p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;gwe --set-product-id dubhxzv0r4e1m7vj --set-iface eth0&quot;``
+</code></pre><p>Or if you want to just specify your own serial number:</p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;gwe --set-product-id &lt;PRODUCT_ID&gt; --set-uuid &lt;THE_SERIAL_NUMBER&gt;&quot;&quot;
+</code></pre><p><strong>Example:</strong></p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;gwe --set-product-id dubhxzv0r4e1m7vj --set-uuid 12345&quot;
+</code></pre></li>
+<li><p>To complete the installation you will need to reboot the gateway.
+To reboot, you can toggle the power or use the following command:</p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;reboot&quot;
+</code></pre></li>
+</ol>
+<p><strong>NOTE:</strong> Gateway Engine uses <code>supervisord</code> to start itself on boot and once it starts, it will start Gateway Engine as well as all other installed Custom Gateway Applications.</p>
+<h1 id="step-three">Step Three</h1>
+<p>Watch for new data in the Gateway Engine Device on your Product device.</p>
+<p>Once the reboot has completed, you will notice that <code>supervisord</code> and
+<code>gwe</code> processes are running in the output of the <code>ps -ef</code> command. Some
+gateways have alot of processes and the <code>ps -ef</code> command can be too much
+to read through. If this is the case, filter the output with <code>grep</code>
+(e.g. <code>ps -ef | grep &#39;super\|gwe\|gmq&#39;</code>). You can also use the
+<code>supervisorctl status</code> command to view the status of the Gateway Engine
+applications.</p>
+<pre><code>ssh &lt;USER&gt;@&lt;GATEWAY_IP&gt; &quot;supervisorctl status&quot;
+gmq                           RUNNING    pid 621, 00:01:38
+gwe                           RUNNING    pid 620, 00:01:38
+</code></pre><p>A few seconds after rebooting the gateway you should see data appear in
+the aliases of your GatewayEngine device.</p>
+<h1 id="summary">Summary</h1>
+<p>The steps in this section were designed to get you moving as quickly as
+possible with Gateway Engine and Exosite. If you have questions,
+concerns or suggestions on how to make this documentation better, please
+<a href="gwesupport@exosite.com">contact the author</a> with a detailed message.</p>
+</div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link  href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc'>
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION </a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Reference Guides</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Guides</p>
+          <li><a class="level-0" href="/murano/guides/keystore-service/">Record Product Metrics</a></li>
+          <li><a class="level-0" href="/murano/guides/user-management/">User Management</a></li>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><h1 id="contributing-to-exosite-s-documentation">Contributing to Exosite&#39;s Documentation</h1>
+<p>Thanks for helping make docs better!</p>
+<h2 id="technical-overview">Technical Overview</h2>
+<p>Exosite&#39;s docs site is hosted on Github Pages, this means that it&#39;s just a bunch
+of static HTML files. To make the docs easier to write this repo includes a
+custom static site generator that reads markdown and transforms it into HTML.</p>
+<h3 id="directory-structure">Directory Structure</h3>
+<p>When the site generator runs it will ingest all the markdown files, convert them
+to HTML, apply the site template, and save the file with the same name, changing
+the extension from <code>.md</code> to <code>.html</code>.</p>
+<p>In an effort to make the doc readable both on the generated site and directly in
+the GitHub web interface most pages should be named README.md. The site
+generator will save the generated HTML from any README.md file into an
+index.html file. This means that, for instance, the RPC doc, <code>/rpc/README.md</code>
+will generate the page <code>/rpc/index.html</code> which can then be viewed at
+docs.exosite.com/rpc</p>
+<p>In addition to markdown files the generator will copy all .html, .png, and .jpg
+files in place.</p>
+<h3 id="frontmatter">Frontmatter</h3>
+<p>Both markdown files and HTML files can contain frontmatter. Frontmatter is
+basically a set of variables that the generator uses to change exactly how it
+processes the file. It must be the first thing in the file and be formatted
+like:</p>
+<pre><code>---
+title: UDP Single Shot
+template: two-column
+---
+</code></pre><p>There are two variables that are currently supported. <code>title</code> is used to set the
+HTML title tag in the template. <code>template</code> is used to set the HTML template that
+is used, it can either be set to &quot;two-column&quot; or &quot;default&quot; (which is the
+default).</p>
+<p>Frontmatter is optional.</p>
+<h2 id="developing">Developing</h2>
+<p>When making changes that are more substantial than a technical or grammar fix
+you&#39;ll probably want to fix preview your changes locally. You&#39;ll need three
+tools to generate the site, Node.js, Node Package Manager, and Gulp.</p>
+<p>Use your platform&#39;s tools to install Node and NPM, on OSX this can be done with:</p>
+<pre><code>brew install npm
+</code></pre><p>Then install gulp globally with</p>
+<pre><code>npm install -g gulp
+</code></pre><p>To actually build the site, first install the dependencies with </p>
+<pre><code>npm install
+</code></pre><p>and finally build the site with </p>
+<pre><code>gulp
+</code></pre><p>You can also startup a local server to see your changes in the browser with</p>
+<pre><code>gulp serve
+</code></pre></div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>

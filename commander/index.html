@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc' class="no-literate">
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION</a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><a class="nav_orange" href="https://exosite.com/business/signup">Sign Up For Murano</a></li> 
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">API Reference</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Guides</p>
+          <li><a class="level-0" href="/murano/guides/keystore-service/">Record Product Metrics</a></li>
+          <li><a class="level-0" href="/murano/guides/user-management/">User Management</a></li>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><div class="messagebox warning">This API has been deprecated and should not be used for new designs.</div>
+
+<h1 id="commander-chat">Commander Chat</h1>
+<p>The Commander is a XMPP bot that allows any authenticated XMPP client 
+(typically a remote user) to initiate a XMPP Chat in order to issue commands
+to the One Platform through the Commander.</p>
+<p>The Commander interfaces to the One Platform on behalf of the connected 
+client. Given sufficient access rights the client may perform some or part of
+the following functions through the Commander:</p>
+<ul>
+<li>Read and write client resource values</li>
+<li>Create, delete and list data sources for client resources</li>
+<li>Count and read data source records</li>
+</ul>
+<h2 id="common-responses">Common Responses</h2>
+<p>When an XMPP Chat session is started with the Commander, all commands will 
+receive a response. If a command fails for any reason, the bot replies with 
+an error message in this format:</p>
+<pre><code>error: &lt;reason&gt;
+</code></pre><p>If a command is successful the bot will reply with a command-specific 
+response value.</p>
+<h3 id="common-success-responses">Common Success Responses</h3>
+<ul>
+<li><code>ok</code></li>
+</ul>
+<h3 id="common-error-responses">Common Error Responses</h3>
+<ul>
+<li><code>error: no identity</code></li>
+<li><code>error: invalid parameters</code></li>
+<li><code>error: unavailable</code></li>
+<li><code>error: not implemented</code></li>
+</ul>
+<h1 id="command-set">Command Set</h1>
+<h2 id="commanderid-commander-id-string">commanderid - commander ID string</h2>
+<p>Gets the ID string of the running XMPP Commander instance.</p>
+<p>Note: it is not necessary to start a chat session to send this command. It
+may be sent in either a XMPP Chat or XMPP Message body.</p>
+<pre><code>commanderid
+</code></pre><p>####response</p>
+<p>Response is the bot name and version.</p>
+<pre><code>XMPP Commander 0.2
+</code></pre><h2 id="version-get-api-version">version - get API version</h2>
+<p>Gets the version number of the running XMPP Commander instance.</p>
+<p>Note: it is not necessary to start a chat session to send this command. It 
+may be sent in either a XMPP Chat or XMPP Message body.</p>
+<pre><code>version
+</code></pre><p>####response</p>
+<p>Response is the version string.</p>
+<pre><code>0.2
+</code></pre><h2 id="help">help</h2>
+<p>Lists commands and help command syntax.</p>
+<p>Note: it is not necessary to start a chat session to send this command. It 
+may be sent in either a XMPP Chat or XMPP Message body.</p>
+<pre><code>help [&lt;command&gt;]
+</code></pre><ul>
+<li><code>&lt;command&gt;</code> specifies the command for which to request help. It is optional.</li>
+</ul>
+<p>####response</p>
+<p>Response is help information, either for a specified command, or general information.</p>
+<p>####examples </p>
+<pre><code>&gt; help
+Type ‘help ‘ where is one of: commanderid, dscount, dscreate, dsdelete, 
+dslist, dsread, dswrite, help, read, setcik, version, write
+</code></pre><pre><code>&gt; help dswrite
+Write historical data to the named Portals data source
+
+dswrite &lt;alias&gt; &lt;timestamp&gt; &lt;value&gt;
+</code></pre><h2 id="setcik-set-client-interface-key">setcik - set client interface key</h2>
+<p>Sets the Client Interface Key (CIK) to the specified value. Setting the CIK 
+starts a chat session. Chat sessions timeout after 5 minutes of inactivity. </p>
+<p>This command is required. It must be the first command sent, else all other 
+commands will fail.</p>
+<p>Ensure your client is using an encrypted connection. Otherwise, your private 
+Client Interface Key will be exposed to third parties and could be exploited.</p>
+<pre><code>setcik &lt;value&gt;
+</code></pre><ul>
+<li><code>&lt;value&gt;</code> is a CIK that identifies the client to the One Platform. Certain 
+commands may not be available depending on the access rights associated with 
+the given CIK.</li>
+</ul>
+<p>####response</p>
+<pre><code>ok
+</code></pre><p>Response may also be:</p>
+<ul>
+<li><code>error: Invalid key</code></li>
+</ul>
+<p>####examples</p>
+<pre><code>&gt;setcik 19cbdefad0b8e90b4d691376d5997f04c1acc18e
+ok
+</code></pre><h2 id="write">write</h2>
+<p>Sends a data value for a specific client resource to the One Platform for 
+storage and processing.</p>
+<pre><code>write &lt;alias&gt; &lt;value&gt;
+</code></pre><ul>
+<li><code>&lt;alias&gt;</code> is the client resource identifier.</li>
+<li><code>&lt;value&gt;</code> is the data value to write.</li>
+</ul>
+<p>####response</p>
+<pre><code>ok
+</code></pre><p>Response may also be:</p>
+<ul>
+<li><code>error: duplicate timestamp</code></li>
+</ul>
+<p>####examples</p>
+<p>To post the value 1043 for resource 1:</p>
+<pre><code>&gt; write 1 1043
+ok
+</code></pre><h2 id="read">read</h2>
+<p>Reads up to the last 24 hours of written values for the specified client 
+resource.</p>
+<pre><code>read &lt;alias&gt; [&lt;count&gt;]
+</code></pre><ul>
+<li><code>&lt;alias&gt;</code> is the client resource identifier.</li>
+<li><code>&lt;count&gt;</code> is the maximum number of data points to return, beginning at the
+most recent to the least recent. If not specified, it defaults to 1.</li>
+</ul>
+<p>####response</p>
+<p>Response is a number of data points in CSV format.</p>
+<pre><code>&lt;timestamp&gt;,&lt;value&gt;
+</code></pre><ul>
+<li><code>&lt;timestamp&gt;</code> is the UNIX timestamp</li>
+<li><code>&lt;value&gt;</code> is the value</li>
+</ul>
+<p>####examples</p>
+<pre><code>&gt; read 1
+1267806955,1043
+</code></pre><h2 id="dscreate-create-a-data-source">dscreate - create a data source</h2>
+<p>Creates a data source having a <code>&lt;name&gt;</code> for the <code>&lt;alias&gt;</code> to be stored. The 
+<code>&lt;format&gt;</code> of the data source may be specified. Before storing a reported 
+value, the value may be normalized with an <code>&lt;operation&gt;</code> one of <code>add</code>, <code>sub</code>, 
+<code>mul</code>, <code>div</code> or <code>mod</code> using the given <code>&lt;constant&gt;</code> value. To store data 
+values without normalization, specify <code>na</code> for <code>&lt;operation&gt;</code>.</p>
+<pre><code>dscreate &lt;name&gt; &lt;alias&gt; [&lt;operation&gt; &lt;constant&gt; &lt;format&gt;]
+</code></pre><ul>
+<li><code>&lt;name&gt;</code> is the friendly name of the data source to create.</li>
+<li><code>&lt;alias&gt;</code> is the resource identifier used when reporting data from the 
+client.</li>
+<li><p><code>&lt;operation&gt;</code> is the preprocessing operation to be performed when data 
+is written to the datasource. Defaults to <code>na</code></p>
+<p>  <code>add</code> : Add <code>&lt;constant&gt;</code> to <code>&lt;value&gt;</code> and store the result.
+  <code>sub</code> : Subtract <code>&lt;constant&gt;</code> from <code>&lt;value&gt;</code> and store the result.
+  <code>mul</code> : Multiply <code>&lt;value&gt;</code> by <code>&lt;constant&gt;</code> and store the product.
+  <code>div</code> : Divide <code>&lt;value&gt;</code> by <code>&lt;constant&gt;</code> and store the quotient.
+  <code>mod</code> : Divide <code>&lt;value&gt;</code> by <code>&lt;constant&gt;</code> and store the remainder.
+  <code>na</code> : Store <code>&lt;value&gt;</code> without normalization.</p>
+</li>
+<li><p><code>&lt;constant&gt;</code> is the second operand for <code>&lt;operation&gt;</code>, a number to apply to 
+<code>&lt;value&gt;</code> using the given <code>&lt;operation&gt;</code>. It is ignored if <code>&lt;operation&gt;</code> is 
+<code>na</code>.</p>
+</li>
+<li><p><code>&lt;format&gt;</code> is the storage format of the data. It defaults to <code>float</code> if <code>op</code> 
+is specified, otherwise defaults to <code>string</code>.</p>
+<p>  <code>integer</code>
+  <code>float</code>
+  <code>string</code></p>
+</li>
+</ul>
+<p>####response</p>
+<pre><code>ok
+</code></pre><p>Response may also be:</p>
+<ul>
+<li><code>error: invalid or duplicate data source</code></li>
+<li><code>error: too many data sources</code></li>
+</ul>
+<p>####examples</p>
+<pre><code>&gt; dscreate “office temp” temp div 20
+ok
+</code></pre><pre><code>&gt; dscreate Temperature 1 mul 5 integer
+ok
+</code></pre><h2 id="dsdelete-delete-data-source">dsdelete - delete data source</h2>
+<p>Deletes the specified data source and all associated data. Warning: once data 
+is deleted, it may not be recovered.</p>
+<pre><code>dsdelete &lt;alias&gt;
+</code></pre><ul>
+<li><code>&lt;alias&gt;</code> is the resource identifier of the datasource to delete.</li>
+</ul>
+<p>####response</p>
+<pre><code>ok
+</code></pre><p>Response may also be:</p>
+<ul>
+<li><code>error: invalid data source</code></li>
+</ul>
+<p>####examples</p>
+<pre><code>&gt; dsdelete temp
+ok
+</code></pre><h2 id="dswrite-write-data-source">dswrite - write data source</h2>
+<p>Write data records to the data source identified by <code>&lt;alias&gt;</code> and timestamp 
+<code>&lt;timestamp&gt;</code>.</p>
+<pre><code>dswrite &lt;alias&gt; &lt;timestamp&gt; &lt;value&gt;
+</code></pre><ul>
+<li><code>&lt;alias&gt;</code> is the resource identifier of the data source to write to.</li>
+<li><code>&lt;timestamp&gt;</code> is the UNIX timestamp to index the data by.</li>
+<li><code>&lt;value&gt;</code> is the data value to write.</li>
+</ul>
+<p>####response</p>
+<pre><code>ok
+</code></pre><p>####examples</p>
+<pre><code>&gt; dswrite temp 1300777704 1067
+ok
+</code></pre><h2 id="dsread-read-data-source">dsread - read data source</h2>
+<p>Reads historical data records from the data source identified by <code>&lt;alias&gt;</code>.</p>
+<pre><code>dsread &lt;alias&gt; &lt;count&gt; [&lt;start&gt; [&lt;end&gt;]]
+</code></pre><ul>
+<li><code>&lt;alias&gt;</code> is the resource identifier of the data source to read from.</li>
+<li><code>&lt;count&gt;</code> is the maximum number of data records to return, beginning at the
+most recent to the least recent.</li>
+<li><code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> are the earliest and latest timestamp for which to
+retrieve historical data records.</li>
+</ul>
+<p>####response</p>
+<p>Response is unix timestamp and data value pairs in CSV format.</p>
+<pre><code>&lt;timestamp 1&gt;,&lt;value 1&gt;
+&lt;timestamp 2&gt;,&lt;value 2&gt;
+...
+</code></pre><p>####examples</p>
+<pre><code>&gt; dsread temp 3
+1300796584,52.7
+1300796577,52.15
+1300777704,53.35
+</code></pre><h2 id="dslist-list-data-sources">dslist - list data sources</h2>
+<p>Lists all created data sources.</p>
+<pre><code>dslist [&lt;detail&gt;]
+</code></pre><ul>
+<li><code>&lt;detail&gt;</code> is the detail level of the list to return. Defaults to <code>name</code>.
+  <code>name</code> returns the data source name only.
+  <code>full</code> returns the data source name, resource, operation, and constant 
+  values.</li>
+</ul>
+<p>####response</p>
+<p>A list of data source information is returned in CSV format.</p>
+<pre><code>&lt;name 1&gt;,&lt;resourceid 1&gt;,&lt;operation 1&gt;,&lt;constant 1&gt;
+&lt;name 2&gt;,&lt;resourceid 2&gt;,&lt;operation 2&gt;,&lt;constant 2&gt;
+...
+</code></pre><p>####examples</p>
+<pre><code>&gt; dslist
+office temp
+office humidity
+outside temp
+outside humidity
+</code></pre><pre><code>&gt; dslist full
+office temp,1,div,20
+office humidity,10,div,100
+outside temp,2,div,20
+outside humidity,11,div,100
+</code></pre><h2 id="dscount-count-data-source-records">dscount - count data source records</h2>
+<p>Counts the number of historical data records from the data source identified 
+by <code>&lt;alias&gt;</code>.</p>
+<pre><code>dscount &lt;alias&gt; [&lt;start&gt; [&lt;end&gt;]]
+</code></pre><ul>
+<li><p><code>&lt;alias&gt;</code> is the resource identifier of the data source to count records from.</p>
+</li>
+<li><p><code>&lt;start&gt;</code> is the earliest UNIX timestamp for which to start counting 
+historical data records. This parameter is optional.</p>
+</li>
+<li><p><code>&lt;end&gt;</code> is the latest UNIX timestamp for which to stop counting 
+historical data records. This parameter is optional.</p>
+</li>
+</ul>
+<p>####response</p>
+<p>The number of historical records that exist in the range specified. If no 
+range is given, then all records are counted.</p>
+<p>####examples</p>
+<pre><code>&gt; dscount temp 1300777704 1300796584
+3
+</code></pre></div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link  href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc' class="no-literate">
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION </a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Reference Guides</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><h1 id="gwe-seed-app">GWE Seed App</h1>
+<p>This guide provides an example solution displaying all the telemetric data from Gateway Engine as well as showing a Custom Gateway Application: &quot;gmq-sine-demo&quot;.</p>
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="configure-murano">Configure Murano</h2>
+<ol>
+<li><p>Create a Murano account (<a href="https://exosite.com/signup/">https://exosite.com/signup/</a>) or log in to your existing account (<a href="https://www.exosite.io/">https://www.exosite.io/</a>).</p>
+</li>
+<li><p>Choose to create a New Product. Select <em>Start from scratch</em> as a starting point. Use whatever product name you like.</p>
+<p> <img src="assets/step_2.png" alt="Step 2"></p>
+</li>
+<li><p>Navigate to the <em>DEVICES</em> tab to add a New Device called &quot;Gateway&quot;. Use your gateway&#39;s MAC address as the <em>Identity</em>. Example format &quot;00:08:00:4A:02:25&quot;.</p>
+<p> <img src="assets/step_3.png" alt="Step 3"></p>
+</li>
+<li><p>Add another New Device called &quot;Test Data&quot;. Use &quot;12345&quot; as the <em>Identity</em>.</p>
+<p> <img src="assets/step_4.png" alt="Step 4"></p>
+</li>
+<li><p>Click on your Test Data device and add a New Resource with the <em>Alias</em> “test” and <em>Data Format</em> “float&quot;. </p>
+<p> <img src="assets/step_5.png" alt="Step 5"></p>
+</li>
+<li><p>Add the &quot;usage_report&quot;, &quot;engine_report&quot;, &quot;device_info&quot;, &quot;update_interval&quot;, &quot;engine_fetch&quot;, and &quot;fetch_status&quot; resources to your &quot;Gateway&quot; device as strings.</p>
+<p> <img src="assets/step_6.png" alt="Step 6"></p>
+</li>
+<li><p>Navigate to the <em>Solutions</em> screen and create an New Solution. Select <em>Start from scratch</em> as a starting point. Name it whatever you like. </p>
+<p> <img src="assets/step_7.png" alt="Step 7"></p>
+</li>
+<li><p>Install the Exosite CLI tool. <a href="https://github.com/exosite/exosite-cli">https://github.com/exosite/exosite-cli</a></p>
+<pre><code> pip install exosite
+</code></pre></li>
+<li><p>Clone the GWE Seed App repository to your machine.</p>
+<pre><code> git clone https://github.com/exosite/GWE-Seed-App
+</code></pre></li>
+<li><p>Init the Exosite program and log in using your exosite.io credentials. </p>
+<pre><code>cd GWE-Seed-App
+exosite --init
+</code></pre></li>
+<li><p>Deploy the solution.</p>
+<pre><code>exosite --deploy
+</code></pre></li>
+</ol>
+<h2 id="configure-the-gateway">Configure The Gateway</h2>
+<ol>
+<li><p>Install GWE on your gateway following the <a href="http://docs.exosite.com/exositeready/gwe/getting_started/">GWE Getting-started guide</a>.</p>
+</li>
+<li><p>Set the update interval to post data every minute.</p>
+<pre><code> gwe -t 60
+</code></pre></li>
+<li><p>Install the gmq-sine-demo onto the Gateway using the documentation <a href="https://github.com/exosite/gmq-sine-demo">https://github.com/exosite/gmq-sine-demo</a>. Use the device identity as the Serial when prompted (12345).</p>
+</li>
+<li><p>Navigate to your solution page and check to see the data is flowing.</p>
+</li>
+</ol>
+</div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>

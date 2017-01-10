@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Exosite Documentation</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Style -->
+  <link  href='/assets/theme-white/style.css' rel='stylesheet'>
+  <link href='/assets/style.css' rel='stylesheet'>
+
+  <!-- Meta -->
+  <meta content="Exosite Reference Documentation" property="og:title">
+  <meta content="Developer Documentation for Exosite" name="description">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44116002-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Initializer -->
+  <script></script>
+</head>
+<body role='flatdoc' class="no-literate">
+  <div class='header'>
+    <div class='left'>
+      <a href="/">
+        <img src="/assets/logo-white.png" id="logo">
+      </a>
+    </div>
+    <div class='headercenter'>
+      <a href="/">DOCUMENTATION </a>
+    </div>
+    <div class='links right'>
+      <ul>
+        <li><input id="docsearch" placeholder="Search..."></li>
+        <li><a href='https://support.exosite.com'>Support</a></li>
+        <li><a href='https://community.exosite.com' target="_blank">Developer Forum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <ul class='topmenu'>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Murano Platform</p>
+          <li><a class="level-0" href="/">Murano Overview</a></li>
+          <li><a class="level-0" href="/murano/get-started">Getting-Started Guides</a></li>
+        </ul>
+        <!-- <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Tutorials</p>
+      	  <li><a class="level-0" href="/murano/tutorials/">Building and Connecting Devices</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Building an Application</a></li>
+          <li><a class="level-0" href="/murano/tutorials/">Using Services and Data Routing</a></li>
+      	  <li><a class"level-0" href="/videos">Videos</a></li>
+        </ul> -->
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Reference Guides</p>
+      	  <!-- <li><a class="level-0" href="/murano/products">Products Overview</a></li> -->
+          <li><a class="level-0" href="/murano/products/device_api/http/">Device API - HTTP</a></li>
+          <!-- <li><a class="level-0" href="/murano/dashboards">Prototyping Dashboards</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/api">Solution Application APIs / Users</a></li> -->
+          <!-- <li><a class="level-0" href="/murano/solution/assets">Solution Application Asset Hosting</a></li> -->
+          <li><a class="level-0" href="/murano/scripting">Solution Scripting</a></li>
+          <li><a class="level-0" href="/murano/services">Solution Services</a></li>
+          <!-- <li><a class="level-0" href="/murano/solutions">Solutions Overview</a></li> -->
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">Developer Tools</p>
+          <li><a class="level-0" href="/murano/exosite-cli/">Exosite CLI (Solutions)</a></li>
+          <li><a class="level-0" href="/murano/exoline-cli/">Exoline CLI (Products)</a></li>
+          <li><a class="level-0" href="/exositeready">ExositeReady</a></li>
+        </ul>
+        <!--The following is to create space between Murano and OneP Pages in side nav  -->
+        <ul style="padding-bottom:0.5em;padding-top:5em;"><p style="font-size:larger;"></p>
+        </ul>
+        <hr style="margin-right:20px;border-top-color: rgba(46, 147, 166, 0.16);">
+        <ul style="padding-bottom:0.5em;padding-top:3em;"><p style="font-size:larger;"></p>
+        </ul>
+        <ul style="padding-bottom:0.5em;"><p style="font-size:larger;">One Platform & Portals</p>
+          <li>One Platform Reference</li>
+          <li><a class="level-1" href="/oneplatform">One Platform Guide</a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/articles/200308457" target="_blank">Provisioning Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/scripting">Scripting Reference</a></li>
+          <li>One Platform API</li>
+          <li><a class="level-1" href="/http">API - HTTP Device</a></li>
+          <li><a class="level-1" href="/coap">API - CoAP Device</a></li>
+          <li><a class="level-1" href="/rpc">API - Remote Procedure Call / RPC</a></li>
+          <li><a class="level-1" href="/websocket">API - Websocket RPC</a></li>
+          <li><a class="level-1" href="/provision">API - Provision Management</a></li>
+          <li><a class="level-1" href="https://github.com/exosite-labs" target="_blank">Libraries <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/exositeready">Device Software - ExositeReady</a></li>
+          <li>Portals Reference</li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200072708">Portals User Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="https://support.exosite.com/hc/en-us/sections/200054894">Portals Admin & Config Articles <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+          <li><a class="level-1" href="/portals">API - Portals</a></li>
+          <li><a class="level-1" href="/widget">API - Custom Widgets</a></li>
+          <li>One Platform / Portals Tutorials</li>
+          <li><a class="level-1" href="/introduction">Intro to One Platform Device Connectivity</a></li>
+      	  <li><a class="level-1" href="/portals/tutorials/get-started">Getting Started Portals</a></li>
+          <li><a class="level-1" href="/portals/tutorials/get-started-arduinoyun">Getting Started Arduino Yún</a></li>
+          <li><a class"level-1" href="/portals/videos">Portals and One Platform Videos</a></li>
+          <li>OneP/Portals Developer Tools</li>
+          <li><a class="level-0" href="https://github.com/exosite/exoline/" target="_blank">Exoline - Command Line Interface <img class="ext_link_icon" src="/assets/external_link.png" alt="(ext)"></a></li>
+        </ul>
+      </ul>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'><h1 id="exositeready-gateway-engine">ExositeReady™ Gateway Engine</h1>
+<p>ExositeReady™ Gateway Engine was created by Exosite to service a commonly occurring
+design pattern in IoT applications. This page provides information about
+what Gateway Engine does and does not do, as well as a list of the terms 
+used and the additional resources available. </p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="/gwe/getting_started/">Getting Started</a></li>
+<li><a href="/gwe/product_overview/">Product Overview</a> </li>
+<li><a href="/gwe/release_packages/">Gateway Engine Release Packages</a></li>
+<li><a href="/gwe/otau/">Over the Air Updates</a></li>
+<li><a href="/gwe/device-client/">Device Client - Docs</a></li>
+<li><a href="/gwe/gateway-engine/">Gateway Engine - Docs</a></li>
+<li><a href="/gwe/gmq/">Gateway Message Queuing - Docs</a></li>
+</ul>
+<h1 id="about-gateway-engine">About Gateway Engine</h1>
+<h2 id="what-is-a-gateway-">What is a Gateway?</h2>
+<p>In the context of IoT, a &quot;gateway&quot; can be loosely defined as any device
+that serves as a communication broker for other devices. Gateways, in
+this context, often bridge the gap between an IoT platform (Exosite) and
+some collection of devices that do not possess the ability of
+communicating on the Internet. Sometimes the &quot;devices&quot;
+generating the data you want on the Internet are not devices, per se, but
+data from other networks the gateway can access such as modbus and CAN.
+Either way, the purpose of any gateway is to move local data to an
+external agent on the Internet.</p>
+<p>Since using gateways is common throughout so many industrial
+applications, Exosite created Gateway Engine as an out-of-the-box developer 
+and deployment tool for Internet-connected gateways.</p>
+<h2 id="what-gateway-engine-does">What Gateway Engine Does</h2>
+<ul>
+<li>It is the product that installs and modifies software over the air
+  in a secure and scalable manner.</li>
+<li>It is an application-hosting framework for Custom
+  Gateway Applications.</li>
+<li>It provides an Exosite API library in Python called <code>device-client</code>.</li>
+<li>It is integrated with <a href="http://supervisord.org">Supervisor</a> to manage
+  your Custom Gateway Applications&#39; runtime environment.</li>
+</ul>
+<h2 id="what-gateway-engine-does-not-do">What Gateway Engine Does Not Do</h2>
+<ul>
+<li>It does not read any sensor data.</li>
+<li>It does not auto-discover any connected nodes or sensors and
+  automatically send data.</li>
+<li>It does not know what a Custom Gateway Application does.</li>
+</ul>
+<h1 id="terminology">Terminology</h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CIK</td>
+<td>An acronym for Client Interface Key. The CIK is the authorization for operations like reading and writing data to dataports, creating new clients, dataports, and scripts, and even dropping (aka deleting) the client.</td>
+</tr>
+<tr>
+<td>Custom Gateway Application</td>
+<td>This is the application you (the developer) develop as your IoT solution. It is the application Gateway Engine hosts on your gateway(s).</td>
+</tr>
+<tr>
+<td>Gateway Engine</td>
+<td>A Python framework for creating Custom Gateway Applications on Linux gateways.</td>
+</tr>
+<tr>
+<td><code>&quot;GatewayEngine&quot;</code></td>
+<td>The Python package in the Gateway Engine framework developed and maintained by Exosite Professional Services.</td>
+</tr>
+<tr>
+<td>GWE</td>
+<td>An acronym for Gateway Engine and/or <code>&quot;GatewayEngine&quot;</code>.</td>
+</tr>
+<tr>
+<td>Vendor</td>
+<td>An Exosite One Platform term that refers to an account name.</td>
+</tr>
+<tr>
+<td>OTAU</td>
+<td>An acronym for Over the Air Update. This is the mechanism that enables software and firmware updates over Internet connections.</td>
+</tr>
+<tr>
+<td>tarball</td>
+<td>A type of compressed file that contains other files, directories, and even other tarballs.</td>
+</tr>
+</tbody>
+</table>
+</div>
+  </div>
+
+  <div id="markdown" style="display:none;">
+
+  </div>
+
+  <!-- Custom -->
+  <script src='/assets/main.js'></script>
+
+</body>
+</html>
