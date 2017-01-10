@@ -223,7 +223,7 @@ Content-Length: 0
 <li>See <a href="#http-responses">HTTP Responses</a> for a full list of responses.</li>
 </ul>
 <h3 id="example">example</h3>
-<pre><code>$ curl http://m2.exosite.com/onep:v1/stack/alias \
+<pre><code>$ curl https://m2.exosite.com/onep:v1/stack/alias \
     -H &#39;X-Exosite-CIK: &lt;CIK&gt;&#39; \
     -H &#39;Accept: application/x-www-form-urlencoded; charset=utf-8&#39; \
     -d &#39;&lt;alias&gt;=&lt;value&gt;&#39;
@@ -248,7 +248,7 @@ Content-Length: &lt;length&gt;
 <li>See <a href="#http-responses">HTTP Responses</a> for a full list of responses</li>
 </ul>
 <h3 id="example">example</h3>
-<pre><code>$ curl http://m2.exosite.com/onep:v1/stack/alias?&lt;dataport-alias&gt; \
+<pre><code>$ curl https://m2.exosite.com/onep:v1/stack/alias?&lt;dataport-alias&gt; \
     -H &#39;X-Exosite-CIK: &lt;CIK&gt;&#39; \
     -H &#39;Accept: application/x-www-form-urlencoded; charset=utf-8&#39;
 </code></pre><h2 id="hybrid-write-read">Hybrid write/read</h2>
@@ -275,7 +275,7 @@ Content-Length: &lt;length&gt;
 <li>See <a href="#http-responses">HTTP Responses</a> for a full list of responses</li>
 </ul>
 <h3 id="example">example</h3>
-<pre><code>$ curl http://m2.exosite.com/onep:v1/stack/alias?&lt;alias_to_read&gt; \
+<pre><code>$ curl https://m2.exosite.com/onep:v1/stack/alias?&lt;alias_to_read&gt; \
     -H &#39;X-Exosite-CIK: &lt;CIK&gt;&#39; \
     -H &#39;Accept: application/x-www-form-urlencoded; charset=utf-8&#39; \
     -d &#39;&lt;alias_to_write&gt;=&lt;value&gt;&#39;
@@ -316,7 +316,7 @@ Content-Length: &lt;length&gt;
 &lt;blank line&gt;
 </code></pre><p>When the dataport is updated and a value is returned, a <code>Last-Modified</code> header is included. When it is vital for your application to receive all updates to a dataport, you can pass the <code>Last-Modified</code> header value back to the <code>If-Not-Modified-Since</code> header in your next request to make sure you don&#39;t miss any points that may have been written since the last request returned.</p>
 <h3 id="example">example</h3>
-<pre><code>$ curl http://m2.exosite.com/onep:v1/stack/alias?&lt;dataport-alias&gt; \
+<pre><code>$ curl https://m2.exosite.com/onep:v1/stack/alias?&lt;dataport-alias&gt; \
     -H &#39;X-Exosite-CIK: &lt;CIK&gt;&#39; \
     -H &#39;Accept: application/x-www-form-urlencoded; charset=utf-8&#39;
     -H &#39;Request-Timeout: 30000
@@ -348,7 +348,7 @@ Content-Type: text/plain; charset=utf-8
 </ul>
 <h3 id="example">example</h3>
 <p>This command activates a device with serial number 12345678 and returns its CIK.</p>
-<pre><code>$ curl http://m2.exosite.com/provision/activate \
+<pre><code>$ curl https://m2.exosite.com/provision/activate \
     -H &quot;Content-Type: application/x-www-form-urlencoded; charset=utf-8&quot; \
     -d &quot;vendor=mysubdomain&amp;model=myclientmodel&amp;sn=12345678&quot;
 </code></pre><h2 id="list-available-content">List Available Content</h2>
